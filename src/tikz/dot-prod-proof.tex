@@ -1,0 +1,17 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+  \coordinate (O) at (0,0);
+  \coordinate (A) at (1,3);
+  \coordinate (B) at (4,2);
+
+  \draw[vp-vector] (O) -- (A) node[midway, above left] {$\vec{v}$};
+  \draw[vp-vector] (O) -- (B) node[midway, below right] {$\vec{u}$};
+  \draw[vp-vector, dashed] (B) -- (A) node[midway, sloped, above] {$\vec{v} - \vec{u}$};
+
+  \path pic["$\theta$", vp-angle, angle radius=30pt] {angle = B--O--A};
+\end{tikzpicture}
+\end{document}

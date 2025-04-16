@@ -1,0 +1,19 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (3,1);
+    \coordinate (B) at (2,3);
+    \draw[vp-grid] (-1, -1) grid (6, 5);
+    \draw[vp-axis] (-1,0) -- (5,0) node[right] {$x$};
+    \draw[vp-axis] (0,-1) -- (0,4) node[above] {$y$};
+    \draw[vp-path, color=--c-green-1, fill=--c-green-1, fill opacity=0.1] (0,0)
+    -- (A) -- (5, 4) -- (B) -- cycle;
+    \draw[vp-vector, dashed] (0,0) -- (A) node[midway, below right] {$\vec{u}$};
+    \draw[vp-vector, dashed] (0,0) -- (B) node[midway, above left] {$\vec{v}$};
+    \path pic["$\theta$", vp-angle, angle radius=40pt] {angle = A--O--B};
+\end{tikzpicture}
+\end{document}

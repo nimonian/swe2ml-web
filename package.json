@@ -1,0 +1,28 @@
+{
+  "name": "swe2ml",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vitepress dev & node src/tikz/chokidar.js",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "tikz": "make -C src/tikz",
+    "tikz:clean": "make clean -C src/tikz"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chokidar": "^4.0.3",
+    "markdown-it-mathjax3": "^4.3.2",
+    "vitepress": "^1.6.3"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.3",
+    "dotenv": "^16.4.7",
+    "katex": "^0.16.21"
+  }
+}

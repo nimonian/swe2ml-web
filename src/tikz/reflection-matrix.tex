@@ -1,0 +1,21 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.2]
+    \draw[vp-grid] (-4, -4) grid (4, 4);
+    \draw[vp-axis] (-4,0) -- (4,0);
+    \draw[vp-axis] (0,-4) -- (0,4);
+    
+    \draw[vp-vector, color=c-indigo-1] (0,0) -- (3,2) node[right] {$\vec{v}$};
+    \draw[vp-vector, color=c-green-1] (0,0) -- (3,-2) node[right] {$S_x \vec{v}$};
+    \draw[vp-vector, color=c-yellow-1] (0,0) -- (-3,2) node[left] {$S_y \vec{v}$};
+
+    \node[below] at (3,0) {$x$};
+    \node[below] at (-3,0) {$-x$};
+    \node[left] at (0,2) {$y$};
+    \node[left] at (0,-2) {$-y$};
+
+\end{tikzpicture}
+\end{document}

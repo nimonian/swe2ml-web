@@ -1,0 +1,13 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[vp-grid] (-1, -1) grid (5, 4);
+    \draw[vp-axis] (-1,0) -- (5,0) node[right] {$x$};
+    \draw[vp-axis] (0,-1) -- (0,4) node[above] {$y$};
+    \draw[vp-vector] (0,0) -- (4,3) node[midway, above left] {$|\vec{v}|$};
+    \draw[vp-path, dashed] (0, 0) -- (4, 0) node[midway, below] {$4$};
+    \draw[vp-path, dashed] (4, 0) -- (4, 3) node[midway, right] {$3$};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,36 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{swe2ml}
+\usepackage{tikz-3dplot}
+
+\tdplotsetmaincoords{72}{25} % adjust view angles
+
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords, scale=3]
+
+  % Define vectors
+  \coordinate (O) at (0,0,0);
+  \coordinate (A) at (1,0.25,0.25);
+  \coordinate (B) at (0.25,1.5,0.5);
+  \coordinate (N) at (-0.25, -0.4375, 1.4375);
+
+  % Draw axes
+  \draw[vp-axis] (-0.5,0,0) -- (2,0,0) node[anchor=north east]{$x$};
+  \draw[vp-axis] (0,-0.5,0) -- (0,2,0) node[anchor=north]{$y$};
+  \draw[vp-axis] (0,0,-0.5) -- (0,0,1.5) node[anchor=south]{$z$};
+
+      % Draw shadow (the plane)
+  \filldraw[opacity=0.1]
+    (O) -- (1,0.25) -- ++(0.25,1.5) -- (0.25,1.5) -- cycle;
+
+  % Draw vectors u, v
+  \draw[vp-vector,color=--c-indigo-1] (O) -- (A) node[anchor=north] {$\vec{u}$};
+  \draw[vp-vector,color=--c-indigo-1] (O) -- (B) node[anchor=south east] {$\vec{v}$};
+
+  % Draw parallelogram (the plane)
+  \filldraw[fill=--c-indigo-1, opacity=0.25]
+    (O) -- (A) -- ++(B) -- (B) -- cycle;
+  
+    \draw[vp-vector,color=--c-red-1] (O) -- (N) node[anchor=south east] {$\vec{n}$};
+
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,28 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{swe2ml}
+
+\begin{document}
+\begin{tikzpicture}
+  \begin{axis}[
+    vp-axes,
+    domain=0:180,
+    samples=200,
+    xlabel={$\theta$},
+    ylabel={$\vec{u} \cdot \vec{v}$},
+    ylabel style={
+      at={(axis description cs:0,1)},
+      anchor=south
+    },
+    xmin=0, xmax=200,
+    ymin=-4, ymax=4,
+    xtick={0,90,180},
+    ytick={0},
+    width=12cm,
+    height=8cm
+  ]
+    \addplot[vp-path, color=c-green-1] {2.8 * cos(x)};
+    \node at (axis cs:0,2.8) [anchor=east] {$|\vec{u}||\vec{v}|$};
+    \node at (axis cs:0,-2.8) [anchor=east] {$-|\vec{u}||\vec{v}|$};
+  \end{axis}
+\end{tikzpicture}
+\end{document}

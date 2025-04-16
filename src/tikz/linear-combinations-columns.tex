@@ -1,0 +1,18 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.3]
+    \draw[vp-grid] (-1, -1) grid (6,6);
+    \draw[vp-axis] (-1,0) -- (6,0) node[right] {$x$};
+    \draw[vp-axis] (0,-1) -- (0,6) node[above] {$y$};
+
+    % \draw[vp-vector, color=--c-red-1] (0, 0) -- (2, 1) node[midway, below right]{$\vec{a}$};
+    % \draw[vp-vector, color=--c-green-1] (0, 0) -- (1, 3) node[midway, above left]{$\vec{b}$};
+    
+    \draw[vp-vector] (0, 0) -- (5, 5) node[midway, above left]{$\begin{bmatrix} p \\ q \end{bmatrix}$};
+
+    \draw[vp-vector, color=--c-red-1, dashed] (0,0) -- (4, 2) node[midway, below right]{$x \begin{bmatrix} a \\ c \end{bmatrix}$};
+    \draw[vp-vector, color=--c-green-1, dashed] (4, 2) -- (5, 5) node[midway, below right]{$y \begin{bmatrix} b \\ d \end{bmatrix}$};
+\end{tikzpicture}
+\end{document}

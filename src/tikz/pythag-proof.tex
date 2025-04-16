@@ -1,0 +1,24 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[vp-grid] (0, 0) grid (5, 5);
+
+    \draw[vp-path] (0,0)
+    -- (0, 3) node[midway, left]  {$x$}
+    -- (0, 5) node[midway, left]  {$y$}
+    -- (3, 5) node[midway, above]  {$x$}
+    -- (5, 5) node[midway, above] {$y$}
+    -- (5, 2) node[midway, right] {$x$}
+    -- (5, 0) node[midway, right] {$y$}
+    -- (2, 0) node [midway, below] {$x$}
+    -- cycle node [midway, below] {$y$};
+
+    \draw[vp-path] (0, 3)
+    -- (3, 5) node[midway, below right] {$z$}
+    -- (5, 2) node[midway, below left] {$z$}
+    -- (2, 0) node[midway, above left] {$z$}
+    -- cycle node[midway, above right] {$z$};
+\end{tikzpicture}
+\end{document}

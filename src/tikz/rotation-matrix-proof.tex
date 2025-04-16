@@ -1,0 +1,25 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[vp-grid] (-1, -1) grid (5, 5);
+    \draw[vp-axis] (-1,0) -- (5,0);
+    \draw[vp-axis] (0,-1) -- (0,5);
+    
+    \draw[vp-vector, color=c-indigo-1] (0,0) coordinate(O) -- (4,2) coordinate(A) node[right] {$\vec{v}$};
+    \draw[vp-path, dashed, color=c-indigo-1] (4,2) -- (4,0) node[below] {$x$};
+    \draw[vp-path, dashed, color=c-indigo-1] (4,2) -- (0,2) node[left] {$y$};
+
+    \draw[vp-vector, c-green-1] (0,0) -- (2,4) coordinate(B) node[above] {$R_{\theta}\vec{v}$};
+    \draw[vp-path, dashed, c-green-1] (2,4) -- (2,0) node[below] {$x'$};
+    \draw[vp-path, dashed, c-green-1] (2,4) -- (0,4) node[left] {$y'$};
+
+  \path pic["$\theta$", vp-angle, angle radius=40pt] {angle = A--O--B};
+
+  \coordinate (Ax) at (4,0);
+  \path pic["$\varphi$", vp-angle, angle radius=50pt] {angle = Ax--O--A};
+
+\end{tikzpicture}
+\end{document}

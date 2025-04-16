@@ -1,0 +1,109 @@
+% vpcolors.sty
+\ProvidesPackage{swe2ml}
+\RequirePackage{xcolor}
+\RequirePackage{tikz}
+\RequirePackage{amsmath, amssymb}
+\RequirePackage{lmodern}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{pgfplots}
+
+\usepackage{xcolor}
+\pgfplotsset{compat=1.18}
+
+% Base
+\definecolor{c-white}{HTML}{FFFFFF}
+\definecolor{c-black}{HTML}{000000}
+
+\definecolor{c-white}{HTML}{FFFFFF}
+\definecolor{c-black}{HTML}{000000}
+
+\definecolor{c-text-1}{HTML}{3C3C43}
+\definecolor{c-text-2}{HTML}{67676c}
+\definecolor{c-text-3}{HTML}{929295}
+
+% Grays
+\definecolor{c-gray-1}{HTML}{DDDDE3}
+\definecolor{c-gray-2}{HTML}{E4E4E9}
+\definecolor{c-gray-3}{HTML}{EBEBEF}
+\definecolor{c-gray-soft}{rgb}{0.557, 0.588, 0.667}
+
+% Indigo
+\definecolor{c-indigo-1}{HTML}{3451B2}
+\definecolor{c-indigo-2}{HTML}{3A5CCC}
+\definecolor{c-indigo-3}{HTML}{5672CD}
+\definecolor{c-indigo-soft}{rgb}{0.392, 0.424, 1.0}
+
+% Purple
+\definecolor{c-purple-1}{HTML}{6F42C1}
+\definecolor{c-purple-2}{HTML}{7E4CC9}
+\definecolor{c-purple-3}{HTML}{8E5CD9}
+\definecolor{c-purple-soft}{rgb}{0.624, 0.478, 0.918}
+
+% Green
+\definecolor{c-green-1}{HTML}{18794E}
+\definecolor{c-green-2}{HTML}{299764}
+\definecolor{c-green-3}{HTML}{30A46C}
+\definecolor{c-green-soft}{rgb}{0.063, 0.725, 0.506}
+
+% Yellow
+\definecolor{c-yellow-1}{HTML}{915930}
+\definecolor{c-yellow-2}{HTML}{946300}
+\definecolor{c-yellow-3}{HTML}{9F6A00}
+\definecolor{c-yellow-soft}{rgb}{0.918, 0.702, 0.031}
+
+% Red
+\definecolor{c-red-1}{HTML}{B8272C}
+\definecolor{c-red-2}{HTML}{D5393E}
+\definecolor{c-red-3}{HTML}{E0575B}
+\definecolor{c-red-soft}{rgb}{0.957, 0.247, 0.369}
+
+% Default TikZ settings
+\tikzset{
+  every picture/.style={
+    font=\fontsize{15pt}{16pt}\selectfont
+  },
+  every node/.style={
+    text=c-text-1
+  },
+  vp-grid/.style={
+    color=c-text-3
+  },
+  vp-axis/.style={
+    ->,
+    thick,
+    line width=0.5mm,
+    color=c-text-2
+  },
+  vp-point/.style={
+    radius=2pt
+  },
+  vp-vector/.style={
+    -latex,
+    thick,
+    line width=0.5mm,
+    color=c-text-1
+  },
+  vp-path/.style={
+    thick,
+    line width=0.5mm,
+    color=c-text-1
+  },
+  vp-angle/.style={
+    draw=c-text-3,
+    angle radius=8pt,
+    line width=0.5mm,
+  }
+}
+
+\pgfplotsset{
+  vp-axes/.style={
+    axis lines=middle,
+    axis line style={->, thick, line width=0.5mm, color=c-text-2},
+    tick style={color=c-text-2, thick},
+    tick label style={text=c-text-1},
+    label style={text=c-text-1},
+    grid=both,
+    grid style={color=c-text-3},
+    smooth
+  }
+}

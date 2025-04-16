@@ -1,0 +1,15 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \draw[vp-path]
+        (0,0) coordinate (A) -- 
+        (4,0) coordinate (B) node[midway, below]{$x$} -- 
+        (4,2) coordinate (C) node[midway, right]{$y$} -- 
+        cycle node[midway, above left]{$z$};
+
+    \draw pic[vp-angle] {right angle=A--B--C};
+\end{tikzpicture}
+\end{document}
