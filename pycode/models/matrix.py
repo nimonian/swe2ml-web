@@ -77,7 +77,7 @@ class Matrix:
             if n != len(other):
                 raise ValueError("Matrix width must equal vector dimension")
 
-            components = (Vector(*row).dot(other) for row in self)
+            components = (Vector(*row) @ other for row in self)
             return Vector(*components)
             # endregion matrix_vector_multiplication
 
@@ -93,8 +93,8 @@ class Matrix:
                 raise ValueError("Matrices wrong shape for multiplication")
 
             rows = [Vector(*row) for row in self]
-            cols = [Vector(*col) for col in other.transpose()]
-            return Matrix([[r.dot(c) for c in cols] for r in rows])
+            cols = [Vector(*row) for row in other.transpose()]
+            return Matrix([[r @ c for c in cols] for r in rows])
             # endregion matrix_matrix_multiplication
 
         return NotImplemented

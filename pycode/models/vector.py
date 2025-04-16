@@ -74,7 +74,7 @@ class Vector:
         # endregion vector_subtraction
 
     # region dot_product
-    def dot(self, other: Vector) -> float:
+    def __matmul__(self, other: Vector) -> float:
         if not isinstance(other, Vector):
             raise ValueError("Dot product requires a vector")
 
@@ -86,7 +86,7 @@ class Vector:
 
     # region vector_cosine
     def cosine(self, other: Vector) -> float:
-        return self.unit().dot(other.unit())
+        return self.unit() @ other.unit()
         # endregion vector_cosine
 
     # region vector_cross_product_2d

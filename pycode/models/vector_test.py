@@ -92,8 +92,8 @@ def test_dot_product():
     u = Vector(1, 3)
     v = Vector(4, 2)
 
-    assert u.dot(v) == v.dot(u) == 10
-    assert (2 * u).dot(3 * v) == 60
+    assert u @ v == v @ u == 10
+    assert (2 * u) @ (3 * v) == 60
     # endregion test_dot_product
 
 
@@ -127,8 +127,8 @@ def test_vector_cross_product_3d():
     n = u.cross(v)
 
     assert n == Vector(-3, 6, -3)
-    assert u.dot(n) == 0
-    assert v.dot(n) == 0
+    assert u @ n == 0
+    assert v @ n == 0
     # endregion test_vector_cross_product_3d
 
 

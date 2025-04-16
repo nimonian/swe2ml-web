@@ -134,9 +134,9 @@ $$
 
 :::
 
-When it comes to our `Vector` class, I won't overload `__mul__()` again to
-define the dot product, because there's at least one other "product" of vectors,
-and it isn't clear which we'd mean. So we'd better make a named method.
+When it comes to our `Vector` class, Python has the `@` infix which is
+[intended to be used](https://peps.python.org/pep-0465/) for the dot product. To
+implement it, we override the `__matmul__` dunder method.
 
 ::: code-group
 
