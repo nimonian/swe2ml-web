@@ -4,9 +4,14 @@ from pycode.models.vector import Vector
 
 
 # region test_matrix_init
-def test_matrix_init():
+def test_matrix_rows():
     A = Matrix([[2, -5], [0, 3], [7, 1]])
     assert A.rows == ((2, -5), (0, 3), (7, 1))
+
+
+def test_matrix_cols():
+    A = Matrix([[2, -5], [0, 3], [7, 1]])
+    assert A.cols == ((2, 0, 7), (-5, 3, 1))
 
 
 def test_matrix_must_be_rectangular():
@@ -20,8 +25,8 @@ def test_matrix_shape():
     A = Matrix([[2, -5], [0, 3], [7, 1]])
     B = Matrix([[1, 0, -2], [5, -3, 4]])
 
-    assert A.shape() == (3, 2)
-    assert B.shape() == (2, 3)
+    assert A.shape == (3, 2)
+    assert B.shape == (2, 3)
     # endregion test_matrix_shape
 
 
@@ -32,19 +37,6 @@ def test_matrix_entry():
 
     assert A[0, 1] == -5
     assert B[1, 2] == 4
-
-
-def test_matrix_row():
-    A = Matrix([[1, 2, 3], [4, 5, 6]])
-    assert A.row(0) == (1, 2, 3)
-    assert A.row(1) == (4, 5, 6)
-
-
-def test_matrix_col():
-    A = Matrix([[1, 2, 3], [4, 5, 6]])
-    assert A.col(0) == (1, 4)
-    assert A.col(1) == (2, 5)
-    assert A.col(2) == (3, 6)
     # endregion test_matrix_entry
 
 
@@ -81,9 +73,9 @@ def test_matrix_addition():
 def test_right_distributivity():
     A = Matrix([[1, 0], [0, 2]])
     B = Matrix([[2, 3], [4, 5]])
-    v = Vector(1, 2)
+    v = Vector([1, 2])
 
-    assert (A + B) * v == A * v + B * v
+    assert (A + B) @ v == A @ v + B @ v
     # endregion test_matrix_addition
 
 
@@ -104,19 +96,21 @@ def test_matrix_subtraction():
 
 # region test_matrix_vector_multiplication
 def test_matrix_vector_multiplication():
-    A = Matrix([[1, 2], [3, 4]])
-    v = Vector(5, 6)
+    A = Matrix([[2, -1], [0, 3]])
+    v = Vector([4, 5])
 
-    assert A * v == Vector(17, 39)
+    assert A @ v == Vector([3, 15])
+    # endregion test_matrix_vector_multiplication
 
 
+# region test_matrix_left_distributivity
 def test_left_distributivity():
     A = Matrix([[1, 2], [3, 4]])
-    u = Vector(5, 6)
-    v = Vector(7, 8)
+    u = Vector([5, 6])
+    v = Vector([7, 8])
 
-    assert A * (u + v) == A * u + A * v
-    # endregion test_matrix_vector_multiplication
+    assert A @ (u + v) == A @ u + A @ v
+    # endregion test_matrix_left_distributivity
 
 
 # region test_matrix_scalar_multiplication
@@ -134,8 +128,8 @@ def test_matrix_matrix_multiplication():
     A = Matrix([[2, -1, 4], [0, 3, 5]])
     B = Matrix([[1, 2], [-2, 0], [3, -1]])
 
-    assert A * B == Matrix([[16, 0], [9, -5]])
-    assert B * A == Matrix([[2, 5, 14], [-4, 2, -8], [6, -6, 7]])
+    assert A @ B == Matrix([[16, 0], [9, -5]])
+    assert B @ A == Matrix([[2, 5, 14], [-4, 2, -8], [6, -6, 7]])
     # endregion test_matrix_matrix_multiplication
 
 
@@ -143,9 +137,9 @@ def test_matrix_matrix_multiplication():
 def test_matrix_composition():
     A = Matrix([[1, 3], [2, -1]])
     B = Matrix([[-2, 4], [0, 1]])
-    v = Vector(3, 2)
+    v = Vector([3, 2])
 
-    assert (A * B) * v == A * (B * v)
+    assert (A @ B) @ v == A @ (B @ v)
     # endregion test_matrix_composition
 
 
@@ -157,9 +151,9 @@ def test_identity_matrix():
 
 def test_identity_tranformation():
     I = Matrix.I(3)
-    v = Vector(1, 2, 3)
+    v = Vector([1, 2, 3])
 
-    assert I * v == v
+    assert I @ v == v
     # endregion test_identity_matrix
 
 

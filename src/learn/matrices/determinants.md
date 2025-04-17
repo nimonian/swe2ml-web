@@ -136,10 +136,9 @@ $$
 
 :::
 
-What's that in the denominator of our solutions $x$ and
-y$? The freakin' **determinant**! And notice that the solution can be _determined_ if, and only
-if, the _determinant_ is not $0$,
-because we can't divide by $0.$
+What's that in the denominator of our solutions? The freakin' **determinant**!
+And notice that the solution can be _determined_ if, and only if, the
+_determinant_ is not $0$ because we can't divide by $0$.
 
 ::: tip
 

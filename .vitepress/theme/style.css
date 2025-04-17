@@ -14,15 +14,5 @@ img {
 }
 
 mjx-container {
-  padding: 1px;
-}
-
-/* Applies to the whole block of display math */
-mjx-container[jax='CHTML'][display='true'] {
-  margin: 1.5em 0; /* vertical margin around block math */
-}
-
-/* Increase spacing between lines inside the rendered math */
-mjx-container mjx-box {
-  line-height: 1.8 !important;
+  padding: 2px;
 }

@@ -1,23 +1,35 @@
 from __future__ import annotations
-from typing import overload
+from typing import Iterable, overload
+
 from pycode.models.vector import Vector
 
 
 class Matrix:
     # region matrix_init
-    def __init__(self, rows):
+    def __init__(self, entries: Iterable[Iterable[float]]):
+        rows = tuple(tuple(row) for row in entries)
+
         if any(len(row) != len(rows[0]) for row in rows):
             raise ValueError("All rows must have same length")
 
-        self.rows = tuple(tuple(row) for row in rows)
+        self._rows = rows
+
+    @property
+    def rows(self):
+        return self._rows
+
+    @property
+    def cols(self):
+        return tuple(zip(*self.rows))
         # endregion matrix_init
 
-    def __repr__(self) -> str:
-        return "Matrix(\n" + "\t\n".join(str(row) for row in self.rows) + "\n)"
+    def __eq__(self, other: Matrix) -> bool:
+        return isinstance(other, Matrix) and self.rows == other.rows
 
     # region matrix_shape
+    @property
     def shape(self) -> tuple[int, int]:
-        return len(self.rows), len(self.rows[0])
+        return len(self.rows), len(self.cols)
         # endregion matrix_shape
 
     # region matrix_entry
@@ -25,85 +37,54 @@ class Matrix:
         i, j = key
         return self.rows[i][j]
 
-    def row(self, i) -> tuple[float]:
-        _, n = self.shape()
-        return tuple(self[i, j] for j in range(n))
-
-    def col(self, j) -> tuple[float]:
-        m, _ = self.shape()
-        return tuple(self[i, j] for i in range(m))
-        # endregion matrix_entry
-
     def __iter__(self):
         return iter(self.rows)
-
-    def __eq__(self, other: Matrix) -> bool:
-        if not isinstance(other, Matrix):
-            return False
-
-        if self.shape() != other.shape():
-            return False
-
-        return all(a == b for a, b in zip(self, other))
+        # endregion matrix_entry
 
     # region matrix_transpose
     def transpose(self) -> Matrix:
-        _, n = self.shape()
-        cols = [self.col(j) for j in range(n)]
-        return Matrix(cols)
+        return Matrix(self.cols)
         # endregion matrix_transpose
 
     # region matrix_addition
     def __add__(self, other: Matrix) -> Matrix:
-        return Matrix([[x + y for x, y in zip(a, b)] for a, b in zip(self, other)])
+        if self.shape != other.shape:
+            raise ValueError("Dimension mismatch")
+
+        A = [Vector(row) for row in self]
+        B = [Vector(row) for row in other]
+        return Matrix(u + v for u, v in zip(A, B))
         # endregion matrix_addition
 
     # region matrix_matrix_multiplication
     @overload
-    def __mul__(self, other: Matrix) -> Matrix: ...
-
-    # region matrix_scalar_multiplication
-    @overload
-    def __mul__(self, other: float) -> Matrix: ...
+    def __matmul__(self, other: Matrix) -> Matrix: ...
 
     # region matrix_vector_multiplication
     @overload
-    def __mul__(self, other: Vector) -> Vector: ...
+    def __matmul__(self, other: Vector) -> Vector: ...
 
-    def __mul__(self, other):
-
+    def __matmul__(self, other):
         if isinstance(other, Vector):
-            _, n = self.shape()
-            if n != len(other):
-                raise ValueError("Matrix width must equal vector dimension")
-
-            components = (Vector(*row) @ other for row in self)
-            return Vector(*components)
+            components = [Vector(row) @ other for row in self]
+            return Vector(components)
             # endregion matrix_vector_multiplication
 
-        if isinstance(other, (int, float)):
-            return Matrix([[other * x for x in row] for row in self])
-            # endregion matrix_scalar_multiplication
-
         if isinstance(other, Matrix):
-            _, n = self.shape()
-            p, _ = other.shape()
-
-            if n != p:
-                raise ValueError("Matrices wrong shape for multiplication")
-
-            rows = [Vector(*row) for row in self]
-            cols = [Vector(*row) for row in other.transpose()]
-            return Matrix([[r @ c for c in cols] for r in rows])
+            rows = [Vector(row) for row in self.rows]
+            cols = [Vector(col) for col in other.cols]
+            return Matrix([row @ col for col in cols] for row in rows)
             # endregion matrix_matrix_multiplication
 
+    # region matrix_scalar_multiplication
+    def __mul__(self, other: float) -> Matrix:
+        if isinstance(other, (int, float)):
+            return Matrix([other * x for x in row] for row in self)
+
         return NotImplemented
 
-    def __rmul__(self, scalar: float):
-        if isinstance(scalar, (int, float)):
-            return self * scalar
-
-        return NotImplemented
+    __rmul__ = __mul__
+    # endregion matrix_scalar_multiplication
 
     # region matrix_subtraction
     def __neg__(self) -> Matrix:
@@ -116,15 +97,16 @@ class Matrix:
     # region identity_matrix
     @classmethod
     def I(cls, n: int) -> Matrix:
-        return cls([[int(i == j) for i in range(n)] for j in range(n)])
+        return cls([int(i == j) for i in range(n)] for j in range(n))
         # endregion identity_matrix
 
     # region matrix_det_2d
     def det(self) -> float:
-        m, n = self.shape()
+        m, n = self.shape
+
+        if m != n:
+            raise ValueError("Matrix must be square")
 
         if m == n == 2:
-            a, b = self.row(0)
-            c, d = self.row(1)
-            return a * d - b * c
+            return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
             # endregion matrix_det_2d

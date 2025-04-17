@@ -11,15 +11,113 @@ the $j^{\text{th}}$ column of $B$.
 For $2 \times 2$ matrices, this looks like
 
 $$
-\begin{bmatrix} a & b \\ c & d \end{bmatrix}
-\begin{bmatrix} \alpha & \beta \\ \gamma & \delta \end{bmatrix}
+\begin{aligned}
+\left[
+\begin{array}{cc}
+\rowcolor{gray} a & b \\
+c & d
+\end{array}
+\right]
 
-= \begin{bmatrix}
-  a \alpha + b \gamma &
-  a \beta + b \delta \\
-  c \alpha + d \gamma &
-  c \beta + d \delta
-\end{bmatrix}
+\left[
+\begin{array}{cc}
+\columncolor{gray} \alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right]
+
+& =
+
+\left[
+\begin{array}{cc}
+\cellcolor{gray} a \alpha + b \gamma &
+\quad\quad\quad\, \\
+\quad\quad\quad\, &
+\quad\quad\quad\,
+\end{array}
+\right]
+
+\\[6pt]
+
+\left[
+\begin{array}{cc}
+\rowcolor{gray} a & b \\
+c & d
+\end{array}
+\right]
+
+\left[
+\begin{array}{cc}
+\alpha & \columncolor{gray} \beta \\
+\gamma & \delta
+\end{array}
+\right]
+
+& =
+
+\left[
+\begin{array}{cc}
+a \alpha + b \gamma &
+\cellcolor{gray} a \beta + b \delta \\
+\quad\quad\quad\, &
+\quad\quad\quad\,
+\end{array}
+\right]
+
+\\[6pt]
+
+\left[
+\begin{array}{cc}
+a & b \\
+\rowcolor{gray} c & d
+\end{array}
+\right]
+
+\left[
+\begin{array}{cc}
+\columncolor{gray} \alpha & \beta \\
+\gamma & \delta
+\end{array}
+\right]
+
+& =
+
+\left[
+\begin{array}{cc}
+a \alpha + b \gamma &
+a \beta + b \delta \\
+\cellcolor{gray} c \alpha + d \gamma &
+\,
+\end{array}
+\right]
+
+\\[6pt]
+
+\left[
+\begin{array}{cc}
+a & b \\
+\rowcolor{gray} c & d
+\end{array}
+\right]
+
+\left[
+\begin{array}{cc}
+\alpha & \columncolor{gray} \beta \\
+\gamma & \delta
+\end{array}
+\right]
+
+& =
+
+\left[
+\begin{array}{cc}
+a \alpha + b \gamma &
+a \beta + b \delta \\
+c \alpha + d \gamma &
+\cellcolor{gray} c \beta + d \delta
+\end{array}
+\right]
+\end{aligned}
 $$
 
 Matrix multiplication can only work if the number of columns in $A$ is equal to

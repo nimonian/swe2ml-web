@@ -70,7 +70,7 @@ which is a huge relief.
 
 <<< @/../pycode/models/matrix_test.py#test_matrix_scalar_multiplication
 
-<<< @/../pycode/models/matrix.py#matrix_scalar_multiplication {1,2,17,18}
+<<< @/../pycode/models/matrix.py#matrix_scalar_multiplication
 
 :::
 
