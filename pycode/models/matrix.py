@@ -108,5 +108,6 @@ class Matrix:
             raise ValueError("Matrix must be square")
 
         if m == n == 2:
-            return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
+            u, v = [Vector(col) for col in self.cols]
+            return u.cross(v)
             # endregion matrix_det_2d

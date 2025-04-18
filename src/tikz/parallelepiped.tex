@@ -1,0 +1,50 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz-3dplot}
+\usepackage{swe2ml}
+
+\begin{document}
+% View: z up, x right, y into the page
+\tdplotsetmaincoords{70}{120}
+
+\begin{tikzpicture}[tdplot_main_coords, scale=5]
+
+% Define vectors a, b, c
+\coordinate (O) at (0,0,0);
+\coordinate (A) at (1,0.1,0);       % Vector a
+\coordinate (B) at (0,1,0.3);     % Vector b (into the page, slight z)
+\coordinate (C) at (0.2,0.2,1);       % Vector c (upward)
+
+% Build parallelepiped
+\coordinate (AB) at ($(A)+(B)$);
+\coordinate (AC) at ($(A)+(C)$);
+\coordinate (BC) at ($(B)+(C)$);
+\coordinate (ABC) at ($(A)+(B)+(C)$);
+
+% Draw axes
+\draw[->, thick] (O) -- (1.5,0,0) node[anchor=south east]{$x$};
+\draw[->, thick] (O) -- (0,1.5,0) node[anchor=south west]{$y$};
+\draw[->, thick] (O) -- (0,0,1.5) node[anchor=south]{$z$};
+
+% Draw vectors a, b, c
+\draw[vp-vector, c-indigo-1] (O) -- (A) node[midway, below] {$\vec{a}$};
+\draw[vp-vector, c-red-1] (O) -- (B) node[midway, left] {$\vec{b}$};
+\draw[vp-vector, c-green-1] (O) -- (C) node[midway, right] {$\vec{c}$};
+
+% Draw base parallelogram (a and b)
+\fill[gray!20, opacity=0.5] (O) -- (A) -- (AB) -- (B) -- cycle;
+
+% Draw vertical edges
+\draw[thick] (O) -- (C);
+\draw[thick] (A) -- (AC);
+\draw[thick] (B) -- (BC);
+\draw[thick] (AB) -- (ABC);
+
+% Draw top parallelogram
+\fill[blue!20, opacity=0.3] (C) -- (AC) -- (ABC) -- (BC) -- cycle;
+
+% Optional: outline the sides
+\draw[thick, dashed] (C) -- (BC);
+\draw[thick, dashed] (AC) -- (ABC);
+
+\end{tikzpicture}
+\end{document}

@@ -20,6 +20,10 @@ export default defineConfig({
   },
 
   themeConfig: {
+    editLink: {
+      pattern: 'https://github.com/nimonian/swe2ml-web/edit/main/src/:path'
+    },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Learn', link: '/learn' }
@@ -115,6 +119,10 @@ export default defineConfig({
           {
             text: 'Determinants',
             link: '/learn/matrices/determinants'
+          },
+          {
+            text: 'Determinants in 3D',
+            link: '/learn/matrices/determinants-3d'
           },
           {
             text: 'Systems of equations'

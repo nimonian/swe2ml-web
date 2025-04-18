@@ -120,8 +120,8 @@ def test_vector_cross_product_2d():
     u = Vector([3, 1])
     v = Vector([2, 3])
 
-    assert u.cross(v) == 7
-    assert v.cross(u) == -7
+    assert u ^ v == 7
+    assert v ^ u == -7
     # endregion test_vector_cross_product_2d
 
 
@@ -129,7 +129,7 @@ def test_vector_cross_product_2d():
 def test_vector_cross_product_3d():
     u = Vector([1, 2, 3])
     v = Vector([4, 5, 6])
-    n = u.cross(v)
+    n = u ^ v
 
     assert n == Vector([-3, 6, -3])
     assert u @ n == 0

@@ -80,7 +80,7 @@ class Vector:
         # endregion vector_subtraction
 
     # region dot_product
-    def __matmul__(self, other: Vector) -> float:
+    def dot(self, other: Vector) -> float:
         if not isinstance(other, Vector):
             return NotImplemented
 
@@ -88,7 +88,9 @@ class Vector:
             raise ValueError("Dimension mismatch")
 
         return sum(x * y for x, y in zip(self, other))
-        # endregion dot_product
+
+    __matmul__ = dot
+    # endregion dot_product
 
     # region vector_cosine
     def cosine(self, other: Vector) -> float:
@@ -114,3 +116,5 @@ class Vector:
             )
 
         raise ValueError("Cross product is only defined for 2D or 3D vectors.")
+
+    __xor__ = cross

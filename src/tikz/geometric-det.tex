@@ -1,0 +1,16 @@
+\documentclass[preview,border=5pt]{standalone}
+\usepackage{swe2ml}
+
+\begin{document}
+\begin{tikzpicture}
+
+    \draw[vp-grid] (-6, -1) grid (4, 5);
+    \draw[vp-axis] (-6,0) -- (4,0) node[right] {$x$};
+    \draw[vp-axis] (0,-1) -- (0,5) node[above] {$y$};
+    \draw[vp-path, color=c-indigo-1, fill=c-indigo-1, fill opacity=0.2] plot[smooth cycle] coordinates {(1,1) (2, 2) (2.5, 3) (0.5, 2)};
+    \draw[vp-path, color=c-indigo-1, fill=c-indigo-1, fill opacity=0.2] plot[smooth cycle] coordinates {(-1.5,1.5) (-3, 3) (-4.5, 3.75) (-3, 0.75)};
+    \node at (1.2, 1.8) {$S$};
+    \node at (-2.8, 1.8) {$|A|S$};
+
+\end{tikzpicture}
+\end{document}

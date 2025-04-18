@@ -11,21 +11,13 @@ $$
 the number
 
 $$
-ad - bc
-$$
-
-is _really, really important_. So important, in fact, that we give it a special
-name: the **determinant**. We also give is some special notation,
-
-$$
 |A| = ad - bc
 $$
 
-Putting aside the fact that it looks suspiciously like a cross product, just
-what the hell does it _determine_, exactly? Lots of things. Actually the reason
-matrices are so beaufiful is the reason they are such a pain in the arse to
-study - the number of connections, equivalences, different interpretations...
-it's amazing and exhausting.
+is _really, really important_. So important, in fact, that we give it a special
+name: the **determinant**. If you squint and tilt your head, you might see that
+$|A|$ is the [cross product](../vectors/cross-product-2d.md) of the columns of
+$A$.
 
 Before I start jabbering on about parallelograms, let's write the code.
 
@@ -40,7 +32,7 @@ Before I start jabbering on about parallelograms, let's write the code.
 ## Geometric interpretation
 
 Take two vectors, $\vec{u}$ and $\vec{v}$. We know that the area of the
-parallelogram is given by the [cross product](../vectors/cross-product-2d.md)
+parallelogram is given by their [cross product](../vectors/cross-product-2d.md)
 
 $$
 \vec{u} \times \vec{v} = u_1 v_2 - u_2 v_1
@@ -84,6 +76,8 @@ $$
 
 In other words, if you need $S$ paint to cover a shape, and you transform every
 point in that shape by $A$, you now need $|A|S$ paint to cover the new shape.
+
+![](../../images/geometric-det.svg)
 
 ::: tip
 
