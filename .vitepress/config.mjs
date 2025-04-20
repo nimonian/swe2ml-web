@@ -77,10 +77,6 @@ export default defineConfig({
           {
             text: 'Triple product',
             link: '/learn/vectors/triple-product'
-          },
-          {
-            text: 'Linear combinations',
-            link: '/learn/vectors/linear-combinations'
           }
         ]
       },
@@ -105,10 +101,6 @@ export default defineConfig({
             link: '/learn/matrices/special-transformations'
           },
           {
-            text: 'Linear transformations',
-            link: '/learn/matrices/linear-transformations'
-          },
-          {
             text: 'Matrix addition',
             link: '/learn/matrices/matrix-addition'
           },
@@ -127,25 +119,30 @@ export default defineConfig({
           {
             text: 'Determinants in 3D',
             link: '/learn/matrices/determinants-3d'
+          }
+        ]
+      },
+      {
+        text: 'Linear algebra',
+        collapsed: true,
+        items: [
+          {
+            text: 'Linear combinations',
+            link: '/learn/linear-algebra/linear-combinations'
           },
           {
-            text: 'Systems of equations'
+            text: 'Linear transformations',
+            link: '/learn/linear-algebra/linear-transformations'
           },
           {
-            text: 'Inverse matrices'
-          },
-          {
-            text: 'Change of basis'
-          },
-          {
-            text: 'Eigenvectors'
+            text: 'Coming soon'
           }
         ]
       }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/nimonian/swe2ml-web' }
     ]
   }
 })
