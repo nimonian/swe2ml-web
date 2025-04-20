@@ -17,9 +17,13 @@ $$
 $$
 
 We call this the **cross product** and give it the operator symbol $\times$ to
-help distinguish it from the dot product. As with the dot product, however,
-measuring $\theta$ with a protractor to calculate the cross product is rubbish
-and we don't want to do it. If only there were a pretty formula...
+help distinguish it from the dot product.
+
+## Calculating the 2D cross product
+
+As with the dot product, however, measuring $\theta$ with a protractor to
+calculate the cross product is rubbish and we don't want to do it. If only there
+were a pretty formula...
 
 ::: details
 
@@ -96,20 +100,8 @@ $$
 
 ::: warning
 
-Strictly speaking, $\vec{u} \times \vec{v}$ could turn out to be negative - this
-happens when the angle from $\vec{u}$ to $\vec{v}$ represents a clockwise turn,
-rather than an anti-clockwise turn as shown in the diagram.
-
-We either accept this and say that the cross product gives the _signed area_ of
-the parallelogram, or - if we really want the geometric area - we take the
-absolute value $|\vec{u} \times \vec{v}|$.
-
-:::
-
-::: warning
-
-Notice also that, for now, the cross product is only defined for $2$ dimensional
-vectors. We'll generalise to $3$ dimensional vectors soon.
+For now, the cross product is only defined for $2$ dimensional vectors. We'll
+generalise to $3$ dimensional vectors soon.
 
 :::
 

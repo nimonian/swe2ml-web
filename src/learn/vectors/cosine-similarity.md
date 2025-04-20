@@ -45,6 +45,8 @@ This seems important enough - let's get cosine similarity into `Vector`.
 
 :::
 
+## Using cosine similarity
+
 Suppose we had some samples of handwriting like
 
 <div style="display: flex; justify-content: center; width: 100%; align-items: center; gap: 1rem;">
@@ -60,7 +62,7 @@ example,
 
 ```python
 im9a = Image.open(images / "mnist_9a.png")
-v9a = Vector(*im9a.getdata())
+v9a = Vector(im9a.getdata())
 
 print(v9a) # Vector(... 0, 80, 244, 254, 176, 2, 0, ...)
 ```

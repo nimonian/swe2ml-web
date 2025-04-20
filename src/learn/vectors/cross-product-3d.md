@@ -33,22 +33,6 @@ Actually I take that back, it is quite pretty - it seems to contain within it a
 few things which look like $2$-dimensional cross products. It's a sort of
 parallelogram version of Pythagoras' Theorem.
 
-::: details
-
-In fact,
-
-- $u_2 v_3 - u_3 v_2$ is the area of the "shadow" which the parallelogram casts
-  onto the $yz$-plane
-
-- $u_3 v_1 - u_1 v_3$ onto the $zx$-plane
-
-- and $u_1 v_2 - u_2 v_1$ onto the $xy$-plane
-
-So this is _very_ akin to Pythagoras, which relates the length of a line to the
-shadows that line casts onto the $x$ and $y$ axes.
-
-:::
-
 If you just want to trust me that this does give the area of the parallelogram,
 that's cool. If you're suspicious, open the panel below and behold.
 
@@ -80,6 +64,8 @@ $$
 Now mop that sweat of your brow! We're done. We've got exactly what we want.
 
 :::
+
+## Cross product as a vector
 
 I don't know who first thought to do this, but someone, somewhere, looked at
 this formula and said... _hmm, what happens if we make this vector:_
@@ -161,21 +147,7 @@ Now let's get this into `Vector` before my head explodes.
 
 <<< @/../pycode/models/vector_test.py#test_vector_cross_product_3d
 
-```python{1,8-13} [vector.py]
-def cross(self, other: Vector) -> float | Vector:
-    if not isinstance(other, Vector):
-        return NotImplemented
-
-    if len(self) == len(other) == 2:
-        return self[0] * other[1] - other[0] * self[1]
-
-    if len(self) == len(other) == 3:
-        return Vector(
-            self[1] * other[2] - self[2] * other[1],
-            self[2] * other[0] - self[0] * other[2],
-            self[0] * other[1] - self[1] * other[0],
-        )
-```
+<<< @/../pycode/models/vector.py#vector_cross_product_3d
 
 :::
 

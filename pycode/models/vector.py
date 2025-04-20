@@ -33,6 +33,7 @@ class Vector:
         # endregion vector_items
 
     # region vector_dimension
+    @property
     def dim(self) -> int:
         return len(self.components)
         # endregion vector_dimension
@@ -42,7 +43,7 @@ class Vector:
         if not isinstance(other, Vector):
             return NotImplemented
 
-        if self.dim() != other.dim():
+        if self.dim != other.dim:
             raise ValueError("Dimension mismatch")
 
         return Vector(a + b for a, b in zip(self, other))
@@ -84,7 +85,7 @@ class Vector:
         if not isinstance(other, Vector):
             return NotImplemented
 
-        if self.dim() != other.dim():
+        if self.dim != other.dim:
             raise ValueError("Dimension mismatch")
 
         return sum(x * y for x, y in zip(self, other))
@@ -97,16 +98,17 @@ class Vector:
         return self.unit() @ other.unit()
         # endregion vector_cosine
 
+    # region vector_cross_product_3d
     # region vector_cross_product_2d
     def cross(self, other: Vector) -> float | Vector:
         if not isinstance(other, Vector):
             return NotImplemented
 
-        if self.dim() == other.dim() == 2:
+        if self.dim == other.dim == 2:
             return self[0] * other[1] - other[0] * self[1]
             # endregion vector_cross_product_2d
 
-        if self.dim() == other.dim() == 3:
+        if self.dim == other.dim == 3:
             return Vector(
                 [
                     self[1] * other[2] - self[2] * other[1],
@@ -118,3 +120,10 @@ class Vector:
         raise ValueError("Cross product is only defined for 2D or 3D vectors.")
 
     __xor__ = cross
+    # endregion vector_cross_product_3d
+
+    # region vector_triple_product
+    @classmethod
+    def triple(cls, u: Vector, v: Vector, w: Vector):
+        return u @ (v ^ w)
+        # endregion vector_triple_product

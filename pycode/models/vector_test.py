@@ -34,8 +34,8 @@ def test_vector_dimension():
     u = Vector([1, 2, 3])
     v = Vector([4, 5])
 
-    assert u.dim() == 3
-    assert v.dim() == 2
+    assert u.dim == 3
+    assert v.dim == 2
     # endregion test_vector_dimension
 
 
@@ -98,8 +98,18 @@ def test_dot_product():
     v = Vector([4, 2])
 
     assert u @ v == v @ u == 10
-    assert (2 * u) @ (3 * v) == 60
     # endregion test_dot_product
+
+
+# region test_dot_product_2
+def test_dot_product_properties():
+    u = Vector([1, 3])
+    v = Vector([4, 2])
+
+    assert (2 * u) @ (3 * v) == 60
+    assert u @ u == approx(abs(u) ** 2)
+    assert u @ Vector([-3, 1]) == 0
+    # endregion test_dot_product_2
 
 
 # region test_vector_cosine
@@ -144,3 +154,18 @@ def test_linear_combination():
 
     assert 2 * a + b == Vector([5, 5])
     # endregion test_linear_combination
+
+
+# region test_vector_triple_product
+def test_vector_triple_product():
+    u = Vector([0, 4, 5])
+    v = Vector([2, -3, 1])
+    w = Vector([7, -1, 2])
+
+    assert Vector.triple(u, v, w) == 107
+    # endregion test_vector_triple_product
+
+    # region test_vector_triple_product_2
+    assert Vector.triple(w, u, v) == 107
+    assert Vector.triple(v, w, u) == 107
+    # endregion test_vector_triple_product_2

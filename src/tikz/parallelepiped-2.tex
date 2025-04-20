@@ -14,7 +14,6 @@
 % Define the z-axis direction as a point
 \coordinate (Z) at (0,0,1);
 
-
 % Define vectors a, b, c
 \coordinate (O) at (0,0,0);
 \coordinate (A) at (1,0,0);       % Vector a
@@ -29,6 +28,7 @@
 
 \filldraw[c-indigo-1, opacity=0.1] (O) -- (A) -- (AB) -- (B) -- cycle;
 
+\draw[vp-vector] (0,0,0) -- (0,0,1.4) node[anchor=south]{$\vec{v} \times \vec{w}$};
 
 % Draw base parallelogram (a and b)
 \draw[c-text-1, thick] (A) -- (AB);
@@ -49,6 +49,21 @@
 \draw[c-text-1, thick] (BC) -- (ABC);
 \draw[c-text-1, thick] (ABC) -- (AC);
 \draw[c-text-1, thick] (AC) -- (C);
+
+% Draw the angle θ between z-axis and vector c
+\draw pic[
+    draw=black,
+    angle radius=50,
+    angle eccentricity=1.2,
+    "$\varphi$"
+] {angle = C--O--Z};
+
+\draw pic[
+    draw=black,
+    angle radius=50,
+    angle eccentricity=1.2,
+    "$\theta$"
+] {angle = A--O--B};
 
 \end{tikzpicture}
 \end{document}

@@ -75,6 +75,10 @@ export default defineConfig({
             link: '/learn/vectors/cross-product-3d'
           },
           {
+            text: 'Triple product',
+            link: '/learn/vectors/triple-product'
+          },
+          {
             text: 'Linear combinations',
             link: '/learn/vectors/linear-combinations'
           }

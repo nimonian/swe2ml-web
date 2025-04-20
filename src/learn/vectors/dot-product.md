@@ -40,16 +40,12 @@ according to how perpendicular they are.
 - If the vectors point in opposite directions, the dot product ends up being
   negative.
 
-This is a surprisingly useful concept. Amongst the many different candidates for
-how we could define the "product" of two vectors, the dot product is one of the
-best.
+## Calculating the dot product
 
 Even if you believe me that this $|\vec{u}| |\vec{v}| \cos \theta$ number is
-useful, who on earth has time for measuring the angle between two vectors?
-Nobody. Although this turns out to be a useful definition, computing it with the
-formula $|\vec{u}| |\vec{v}| \cos \theta$ absolutely sucks. There's a trick,
-which I will prove in the box below, which simplifies calculating the dot
-product immensely.
+useful, who on earth has time for measuring the angle between two vectors? I
+don't even own a protractor. Good job there's a trick, which I will prove in the
+box below, which simplifies calculating the dot product immensely.
 
 ::: details
 
@@ -145,6 +141,29 @@ implement it, we override the `__matmul__` dunder method.
 <<< @/../pycode/models/vector.py#dot_product
 
 :::
+
+## Properties of the dot product
+
+We can also check a couple of important properties for the dot product.
+
+1. We can "factor out" scalars
+
+   $$
+   \left( \lambda\vec{u} \right) \cdot \left( \mu\vec{v} \right) = \lambda
+   \mu \left( \vec{u} \cdot \vec{v} \right)
+   $$
+
+2. Dotting a vector with itself gives the square of its magnitude
+
+   $$ \vec{u} \cdot \vec{u} = |\vec{u}|^2 $$
+
+3. Two vectors have $0$ dot product if, and only if, they are perpendicular
+
+   $$
+   \vec{u} \cdot \vec{v} = 0 \quad \Leftrightarrow \quad \vec{u} \perp \vec{v}
+   $$
+
+<<< @/../pycode/models/vector_test.py#test_dot_product_2
 
 ## Exercise
 
