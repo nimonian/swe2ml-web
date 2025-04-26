@@ -2,7 +2,7 @@
 
 Since any matrix defines a function $\vec{v} \mapsto A\vec{v}$, we want the
 product of two matrices to be equivalent to composition of the functions they
-define. In other words, $AB$ had better satisfy
+define. To put this in an equation, $AB$ had better satisfy
 
 $$
 \left( A B \right) \vec{v} = A \left(B \vec{v} \right)
@@ -13,8 +13,7 @@ as transforming $\vec{v}$ by $B$ and then by $A$. This is entirely analagous to
 composition in functional programming:
 
 ```python
-def compose(f, g):
-    return lambda x: f(g(x))
+assert compose(f, g)(x) == f(g(x))
 ```
 
 To make this work, we need the $i,j$ entry of $AB$ to be the
@@ -103,9 +102,9 @@ AB =
 \end{bmatrix}
 $$
 
-I'll use this idea in my implementation so I don't end up duplucating my
-implementation of the dot product. I'll use the `@` operator for the matrix
-product, as intended in Python.
+I'll use this idea in my implementation so I don't end up duplucating my code
+from the dot product. I'll use the `@` operator for the matrix product, as
+intended in Python.
 
 ::: code-group
 

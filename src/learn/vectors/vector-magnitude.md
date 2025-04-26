@@ -1,7 +1,7 @@
 # Vector magnitude
 
-Some vectors are big; some vectors are small. That's ok. But for the good of
-science we'd like to assign a number to measure the size.
+Some vectors are big; some vectors are small. For the good of science we'd like
+to assign a number to the size.
 
 To do this, we might remember a little fact about triangles known as Pythagoras'
 theorem.

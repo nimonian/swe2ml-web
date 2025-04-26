@@ -79,6 +79,10 @@ export default defineConfig({
             link: '/learn/vectors/cross-product'
           },
           {
+            text: 'Parallelograms',
+            link: '/learn/vectors/parallelograms'
+          },
+          {
             text: 'The triple product',
             link: '/learn/vectors/triple-product'
           }
