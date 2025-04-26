@@ -1,13 +1,18 @@
 # Components and dimensions
 
-On the left is a point, on the right is a vector:
+A vector is pretty much a tuple with a bunch of extra methods and a few
+centuries of psychological baggage. We're fairly accustomed to the idea of
+taking a list of stuff and adding extra behaviour: stacks, queues , yada yada.
+So vectors aren't really all that different.
+
+I'll be introducing vectors (and matrices) geometrically, so let's get one thing
+cleared up: on the left is a point, on the right is a vector:
 
 $$
 P(3, 2) \qquad \vec{v} = \begin{bmatrix} 3 \\ 2 \end{bmatrix}
 $$
 
-On the face of it, there is very little difference between them. They both just
-look like tuples of numbers. Here's one way to look at it: although the
+On the face of it, there is very little difference between them. Although the
 **properties** look the same, the class of vectors has a much richer set of
 **behaviours**.
 
@@ -20,20 +25,9 @@ But a vector doesn't have to start at the origin:
 ![](../../images/basic-vector.svg)
 
 All of these are the vector $\begin{bmatrix} 3 \\ 2 \end{bmatrix}$, they all say
-_go three in the $x$ direction and two in the $y$ direction_. Vectors which do
-start at the origin are called **position vectors**.
-
-A vector is often described as a "directed quantity", which means it has
-
-- a **size** (or _magnitude_)
-- a **direction** (or _argument_)
-
-If you use negative and positive numbers, you already use directed quantities,
-just with the restricted directions of _positive_ and _negative_. Well, with
-vectors now we have a great many more directions to choose from.
-
-We usually write vectors vertically. The values $3$ and $2$ are called the
-**components** of the vector. With this in mind, let's start our vector class.
+_go three in the $x$ direction and two in the $y$ direction_. The values $3$ and
+$2$ are called the **components** of the vector. With this in mind, let's start
+our vector class.
 
 ::: code-group
 
@@ -57,7 +51,10 @@ class Vector:
 ::: tip
 
 I'll generally put the test cases first. Feel free to think up or code an
-implementation, if you like. Click the `vector.py` tab to see mine.
+implementation, if you like. Click the `vector.py` tab to see mine. My code will
+be pretty shitty, but these docs are about math for devs not the other way
+round - however, if it gets _too shitty to ignore_ do make a pull request, and
+thanks in advance.
 
 :::
 
@@ -98,15 +95,14 @@ I'll omit the class declaration.
 
 :::
 
-What else? Let's make sure `len(v)` works for our vectors, so we can find out
-their dimensions. Also, let's make sure we can get at our components with things
-like `v[i]`, and loop through our components easily:
+What else? Let's make sure we can easily get to the dimension and components of
+our vectors, as well as loop through the components.
 
 ::: code-group
 
-<<< @/../pycode/models/vector_test.py#test_vector_dimension
+<<< @/../pycode/models/vector_test.py#test_vector_items
 
-<<< @/../pycode/models/vector.py#vector_dimension
+<<< @/../pycode/models/vector.py#vector_items
 
 :::
 

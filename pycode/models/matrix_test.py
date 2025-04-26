@@ -75,7 +75,7 @@ def test_right_distributivity():
     B = Matrix([[2, 3], [4, 5]])
     v = Vector([1, 2])
 
-    assert (A + B) @ v == A @ v + B @ v
+    assert (A + B)(v) == A(v) + B(v)
     # endregion test_matrix_addition
 
 
@@ -94,13 +94,13 @@ def test_matrix_subtraction():
     # endregion test_matrix_subtraction
 
 
-# region test_matrix_vector_multiplication
-def test_matrix_vector_multiplication():
+# region test_matrix_vector_transformation
+def test_matrix_vector_transformation():
     A = Matrix([[2, -1], [0, 3]])
     v = Vector([4, 5])
 
-    assert A @ v == Vector([3, 15])
-    # endregion test_matrix_vector_multiplication
+    assert A(v) == Vector([3, 15])
+    # endregion test_matrix_vector_transformation
 
 
 # region test_matrix_left_distributivity
@@ -109,7 +109,7 @@ def test_left_distributivity():
     u = Vector([5, 6])
     v = Vector([7, 8])
 
-    assert A @ (u + v) == A @ u + A @ v
+    assert A(u + v) == A(u) + A(v)
     # endregion test_matrix_left_distributivity
 
 
@@ -118,19 +118,19 @@ def test_matrix_scalar_multiplication():
     A = Matrix([[1, 2], [3, 4]])
 
     assert 2 * A == Matrix([[2, 4], [6, 8]])
-    assert A * 2 == Matrix([[2, 4], [6, 8]])
+    assert A * 2 == 2 * A
     assert A + A == 2 * A
     # endregion test_matrix_scalar_multiplication
 
 
-# region test_matrix_matrix_multiplication
-def test_matrix_matrix_multiplication():
+# region test_matrix_matrix_product
+def test_matrix_matrix_product():
     A = Matrix([[2, -1, 4], [0, 3, 5]])
     B = Matrix([[1, 2], [-2, 0], [3, -1]])
 
     assert A @ B == Matrix([[16, 0], [9, -5]])
     assert B @ A == Matrix([[2, 5, 14], [-4, 2, -8], [6, -6, 7]])
-    # endregion test_matrix_matrix_multiplication
+    # endregion test_matrix_matrix_product
 
 
 # region test_matrix_composition
@@ -139,7 +139,7 @@ def test_matrix_composition():
     B = Matrix([[-2, 4], [0, 1]])
     v = Vector([3, 2])
 
-    assert (A @ B) @ v == A @ (B @ v)
+    assert (A @ B)(v) == A(B(v))
     # endregion test_matrix_composition
 
 
@@ -153,7 +153,7 @@ def test_identity_tranformation():
     I = Matrix.I(3)
     v = Vector([1, 2, 3])
 
-    assert I @ v == v
+    assert I(v) == v
     # endregion test_identity_matrix
 
 

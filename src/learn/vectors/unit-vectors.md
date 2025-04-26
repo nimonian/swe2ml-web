@@ -30,7 +30,7 @@ Let's make sure it really is a unit vector:
 
 $$
 \begin{aligned}
-\left| \begin{bmatrix} 0.6 \\ 0.8 \end{bmatrix} \right|
+\left| \vec{v} \right|
 & = \sqrt{0.6^2 + 0.8^2} \\
 & = \sqrt{0.36 + 0.64} \\
 & = \sqrt{1} \\

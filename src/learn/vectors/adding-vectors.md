@@ -38,7 +38,7 @@ u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n
 $$
 
 To implement vector addition in our `Vector` class, we can override the `+`
-operator by defining an `__add__()` method.
+operator by defining an `__add__` method.
 
 ::: code-group
 

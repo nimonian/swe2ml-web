@@ -32,14 +32,25 @@ feel fancy.
 
 :::
 
-To implement this in `Vector`, we will use the `__mul__()` method for overriding
-multiplication.
+To implement this in `Vector`, we will use the `__mul__` method to override the
+`*` operator.
 
 ::: code-group
 
 <<< @/../pycode/models/vector_test.py#test_vector_scalar_multiplication
 
-<<< @/../pycode/models/vector.py#vector_scalar_multiplication
+```py [vector.py]
+def __mul__(self, other: float) -> Vector:
+    if isinstance(other, (int, float)):
+        return Vector(x * other for x in self)
+
+    return NotImplemented
+
+__rmul__ = __mul__
+
+def __truediv__(self, scalar: float) -> Vector:
+    return (1 / scalar) * self
+```
 
 :::
 

@@ -56,25 +56,23 @@ class Matrix:
         return Matrix(u + v for u, v in zip(A, B))
         # endregion matrix_addition
 
-    # region matrix_matrix_multiplication
-    @overload
-    def __matmul__(self, other: Matrix) -> Matrix: ...
+    # region matrix_vector_transformation
+    def __call__(self, other: Vector) -> Vector:
+        if not isinstance(other, Vector):
+            return NotImplemented
 
-    # region matrix_vector_multiplication
-    @overload
-    def __matmul__(self, other: Vector) -> Vector: ...
+        components = [Vector(row) @ other for row in self]
+        return Vector(components)
+        # endregion matrix_vector_transformation
 
-    def __matmul__(self, other):
-        if isinstance(other, Vector):
-            components = [Vector(row) @ other for row in self]
-            return Vector(components)
-            # endregion matrix_vector_multiplication
+    # region matrix_matrix_product
+    def __matmul__(self, other: Matrix) -> Matrix:
 
         if isinstance(other, Matrix):
             rows = [Vector(row) for row in self.rows]
             cols = [Vector(col) for col in other.cols]
             return Matrix([row @ col for col in cols] for row in rows)
-            # endregion matrix_matrix_multiplication
+            # endregion matrix_matrix_product
 
     # region matrix_scalar_multiplication
     def __mul__(self, other: float) -> Matrix:
@@ -108,6 +106,5 @@ class Matrix:
             raise ValueError("Matrix must be square")
 
         if m == n == 2:
-            u, v = [Vector(col) for col in self.cols]
-            return u.cross(v)
+            return self[0, 0] * self[1, 1] - self[0, 1] * self[1, 0]
             # endregion matrix_det_2d

@@ -13,7 +13,8 @@ $$
 $$
 
 The hawk-eyed among you might even notice that
-$\frac{\vec{u}}{|\vec{u}|} = \hat{u}$ and similar for $\vec{v}$, so we could
+$\frac{\vec{u}}{|\vec{u}|} = \hat{u}$ is a
+[unit vector](../vectors/unit-vectors), and similar for $\vec{v}$, so we could
 write
 
 $$

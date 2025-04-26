@@ -10,112 +10,61 @@ the components of this new vector, we take the
 [dot product](../vectors/dot-product) with **each row** of the matrix.
 
 $$
+A \vec{v} =
 \begin{bmatrix} a & b \\ c & d \end{bmatrix}
 \begin{bmatrix} x \\ y \end{bmatrix}
 =
 \begin{bmatrix} ax + by \\ cx + dy \end{bmatrix}
 $$
 
-For example, let's say
+For example,
 
 $$
-A = \begin{bmatrix}
+\begin{bmatrix}
 2 & -1 \\ 0 & 3
-\end{bmatrix},
-
-\quad
-
-\vec{v} = \begin{bmatrix}
-4 \\ 5
 \end{bmatrix}
-$$
-
-and we want to calculate $A \vec{v}$. First, we take the dot product using the
-first row,
-
-$$
-\left[
-\begin{array}{cc}
-\rowcolor{gray} 2 & -1 \\
-0 & 3
-\end{array}
-\right]
-
-\left[
-\begin{array}{c}
-\columncolor{gray}
-4 \\ 5
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{c}
-\rowcolor{gray} 8 - 5 \\ \,
-\end{array}
-\right]
-
-=
-\begin{bmatrix}
-3 \\ \,
-\end{bmatrix}
-$$
-
-Then with the second row,
-
-$$
-\left[
-\begin{array}{cc}
-2 & -1 \\
-\rowcolor{gray} 0 & 3
-\end{array}
-\right]
-
-\left[
-\begin{array}{c}
-\columncolor{gray}
-4 \\ 5
-\end{array}
-\right]
-
-=
-
-\left[
-\begin{array}{c}
-3 \\
-\rowcolor{gray} 0 + 15
-\end{array}
-\right]
-
-=
 
 \begin{bmatrix}
+4 \\ 5
+\end{bmatrix}
+
+= \begin{bmatrix}
+8 - 5 \\ 0 + 15
+\end{bmatrix}
+
+= \begin{bmatrix}
 3 \\ 15
 \end{bmatrix}
 $$
 
+For me, it helps to think of the rows of the matrix as vectors $\vec{r_i}$
+(albeit written horizontally):
+
+$$
+A\vec{v}
+
+= \begin{bmatrix} \vec{r_1} \cdot \vec{v} \\ \vec{r_2} \cdot \vec{v} \\ \vdots \\ \vec{r_m} \cdot \vec{v} \end{bmatrix}
+$$
+
+In fact, this is how I'll implement matrices acting on vectors in the code.
+
+::: code-group
+
+<<< @/../pycode/models/matrix_test.py#test_matrix_vector_transformation
+
+<<< @/../pycode/models/matrix.py#matrix_vector_transformation
+
+:::
+
 ::: warning
 
-Multiplying a matrix with a vector only works if the number of **columns in the
+Transforming a vector by a matrix only works if the number of **columns in the
 matrix** is equal to the number of **components in the vector**. If the
 dimensions aren't right, we can't do the dot product between row and vector.
 
 :::
 
-With this, we should be able to implement multiplying a vector by a matrix.
-Similar to the dot product of two vectors, we will make use of Python's `@`
-infix operator with `__matmul__`.
-
-::: code-group
-
-<<< @/../pycode/models/matrix_test.py#test_matrix_vector_multiplication
-
-<<< @/../pycode/models/matrix.py#matrix_vector_multiplication
-
-:::
-
-We also find that this definition of matrix-vector multiplication satisfies an
+We also find that this definition of matrix-vector transformation satisfies an
 important "distributive law":
 
 $$
@@ -124,8 +73,8 @@ $$
 
 <<< @/../pycode/models/matrix_test.py#test_matrix_left_distributivity
 
-We don't need to implement anything here - it's guaranteed by the definition of
-matrix multiplication.
+We don't need to implement anything here - it's guaranteed by the operation of
+vector transformation.
 
 If a matrix is square, then it doesn't affect the dimension of the vector.
 However, a non-square matrix will indeed change the dimension of the vector. For

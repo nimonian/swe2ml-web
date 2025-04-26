@@ -41,7 +41,7 @@ onMounted(() => {
 
       <AnswerInput :answer="rudiment.answer" />
 
-      <details class="details custom-block" :key="rudiment.hint">
+      <details class="details custom-block" :key="rudiment.solution">
         <summary>Hint</summary>
         <div v-katex v-text="rudiment.hint" />
       </details>

@@ -1,9 +1,4 @@
-# Special transformations
-
-There are a couple of important transformation matrices which are worth getting
-to know on a personal level.
-
-## Identity
+# Identity matrix
 
 The matrices
 
@@ -34,7 +29,11 @@ Let's chuck a static method into our class to create identity matrices.
 
 :::
 
-## Scaling
+There's no exercise here as there's nothing to do, really! It's enough to know
+that the identity matrices exist and they come in handy when we're doing algebra
+with matrices.
+
+<!-- ## Scaling
 
 Note that
 
@@ -140,38 +139,6 @@ $$
 
 :::
 
-## Combinations
-
-We can even combine these fellas to move vectors around will-he-nil-he. for
-example, let's rotate the vector $\begin{bmatrix} 4 \\ 2 \end{bmatrix}$ by
-$30^{\circ}$ and then reflect in the $x$-axis:
-
-$$
-\begin{aligned}
-S_x R_{30^{\circ}} \vec{v}
-
-& =
-\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-\begin{bmatrix} \cos 30^{\circ} & - \sin 30^{\circ} \\ \sin 30^{\circ} & \cos 30^{\circ} \end{bmatrix}
-\begin{bmatrix} 4 \\ 2 \end{bmatrix} \\
-
-& =
-\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-\begin{bmatrix} \frac{\sqrt{3}}{2} & - \frac{1}{2} \\ \frac{1}{2} & \frac{\sqrt{3}}{2} \end{bmatrix}
-\begin{bmatrix} 4 \\ 2 \end{bmatrix} \\
-
-& =
-\begin{bmatrix} 1 & 0 \\ 0 & -1 \end{bmatrix}
-\begin{bmatrix} 2\sqrt{3} - 1 \\ 2 - \sqrt{3} \end{bmatrix} \\
-
-& =
-\begin{bmatrix} 2\sqrt{3} - 1 \\ \sqrt{3} - 2 \end{bmatrix} \\
-
-\end{aligned}
-$$
-
-This is the basis of how most computer animation works.
-
 ## Exercise
 
-<Exercise id="special-transformations" />
+<Exercise id="special-transformations" /> -->

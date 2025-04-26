@@ -1,7 +1,6 @@
 # Rows and columns
 
-A matrix feels a bit like a supervector. Instead of just one column, we get as
-many as we want:
+A matrix is pretty much a grid of numbers with ideas way above its station.
 
 $$
 A = \begin{bmatrix}
@@ -18,7 +17,7 @@ B = \begin{bmatrix}
 \end{bmatrix}
 $$
 
-However, we can't go too wild: a matrix must always be rectangular.
+However, they can't go too wild: a matrix must always be rectangular.
 
 ::: code-group
 

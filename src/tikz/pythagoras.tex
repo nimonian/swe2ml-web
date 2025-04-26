@@ -4,11 +4,11 @@
 
 \begin{document}
 \begin{tikzpicture}[scale=1.5]
-    \draw[vp-path]
+    \draw[vp-path, c-indigo-1, fill=c-indigo-1, fill opacity=0.1]
         (0,0) coordinate (A) -- 
-        (4,0) coordinate (B) node[midway, below]{$x$} -- 
-        (4,2) coordinate (C) node[midway, right]{$y$} -- 
-        cycle node[midway, above left]{$z$};
+        (4,0) coordinate (B) node[midway, below, opacity=1]{$x$} -- 
+        (4,2) coordinate (C) node[midway, right, opacity=1]{$y$} -- 
+        cycle node[midway, above left, opacity=1]{$z$};
 
     \draw pic[vp-angle] {right angle=A--B--C};
 \end{tikzpicture}
