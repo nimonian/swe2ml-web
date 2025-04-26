@@ -5,7 +5,7 @@
 \tdplotsetmaincoords{72}{25} % adjust view angles
 
 \begin{document}
-\begin{tikzpicture}[tdplot_main_coords, scale=3]
+\begin{tikzpicture}[tdplot_main_coords, scale=3.5]
 
   % Define vectors
   \coordinate (O) at (0,0,0);
@@ -26,7 +26,7 @@
   \draw[vp-vector,color=--c-indigo-1] (O) -- (B) node[anchor=south east] {$\vec{v}$};
 
   % Draw parallelogram (the plane)
-  \filldraw[fill=--c-indigo-1, opacity=0.25]
+  \filldraw[c-indigo-1, opacity=0.2]
     (O) -- (A) -- ++(B) -- (B) -- cycle;
 
 \end{tikzpicture}

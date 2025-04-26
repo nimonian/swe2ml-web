@@ -4,13 +4,13 @@
 
 \begin{document}
 \begin{tikzpicture}[scale=1.51]
-  \coordinate (O1) at (-4,0);
-  \coordinate (U1) at ([shift=(15:1.5)]-4,0);
-  \coordinate (V1) at ([shift=(30:2)]-4,0);
+  \coordinate (O1) at (-3.75,0);
+  \coordinate (U1) at ([shift=(15:1.5)]-3.75,0);
+  \coordinate (V1) at ([shift=(30:2)]-3.75,0);
   \draw[vp-vector] (O1) -- (U1) node[midway, below right] {$\vec{u}$};
   \draw[vp-vector] (O1) -- (V1) node[midway, above] {$\vec{v}$};
   \path pic[vp-angle, angle radius=30pt] {angle = U1--O1--V1};
-  \node[below] at (-4,-0.25) {$\cos\theta = 0.8$};
+  \node[below] at (-3.75,-0.25) {$\cos\theta = 0.8$};
 
   \coordinate (O2) at (0,0);
   \coordinate (U2) at ([shift=(45:1.5)]0,0);
@@ -21,13 +21,13 @@
   \node[below] at (0,-0.25) {$\cos\theta = 0$};
 
 
-  \coordinate (O3) at (4,0);
-  \coordinate (U3) at ([shift=(30:1.5)]4,0);
-  \coordinate (V3) at ([shift=(150:2)]4,0);
+  \coordinate (O3) at (3.75,0);
+  \coordinate (U3) at ([shift=(30:1.5)]3.75,0);
+  \coordinate (V3) at ([shift=(150:2)]3.75,0);
   \draw[vp-vector] (O3) -- (U3) node[midway, below right] {$\vec{u}$};
   \draw[vp-vector] (O3) -- (V3) node[midway, below left] {$\vec{v}$};
   \path pic[vp-angle, angle radius=15pt] {angle = U3--O3--V3};
-  \node[below] at (4,-0.25) {$\cos\theta = -0.5$};
+  \node[below] at (3.75,-0.25) {$\cos\theta = -0.5$};
 
 \end{tikzpicture}
 \end{document}

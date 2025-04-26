@@ -22,19 +22,19 @@
 <g fill='#3c3c43' transform='matrix(1 0 0 1 -3.8354 -177.0158)'>
 <use x='-23.790379' y='119.749624' xlink:href='#g1-121'/>
 </g>
-<path d='M-23.789063 119.75L141.2226-4.008' stroke='#3c3c43' fill='none' stroke-width='1.41731' stroke-miterlimit='10'/>
-<path d='M146.289368-7.812486C144.578432-6.964838 141.504216-5.980462 139.074526-5.699209L142.242495-1.472646C143.19171-3.72655 145.000306-6.402335 146.289368-7.812486' fill='#3c3c43'/>
+<path d='M-23.789063 119.75L141.2226-4.008' stroke='#3451b2' fill='none' stroke-width='1.41731' stroke-miterlimit='10'/>
+<path d='M146.289368-7.812486C144.578432-6.964838 141.504216-5.980462 139.074526-5.699209L142.242495-1.472646C143.19171-3.72655 145.000306-6.402335 146.289368-7.812486' fill='#3451b2'/>
 <g fill='#3c3c43' transform='matrix(1 0 0 1 65.0985 -71.5456)'>
 <use x='-23.790379' y='119.749624' xlink:href='#g0-106'/>
 <use x='-20.235131' y='119.749624' xlink:href='#g1-126'/>
 <use x='-19.639266' y='119.749624' xlink:href='#g1-118'/>
 <use x='-12.029011' y='119.749624' xlink:href='#g0-106'/>
 </g>
-<path d='M-23.789063 119.75H146.2886' stroke='#3c3c43' fill='none' stroke-width='1.41731' stroke-miterlimit='10' stroke-dasharray='2.98883 2.98883'/>
+<path d='M-23.789063 119.75H146.2886' stroke='#3451b2' fill='none' stroke-width='1.41731' stroke-miterlimit='10' stroke-dasharray='2.98883 2.98883'/>
 <g fill='#3c3c43' transform='matrix(1 0 0 1 81.6136 13.441)'>
 <use x='-23.790379' y='119.749624' xlink:href='#g2-52'/>
 </g>
-<path d='M146.2886 119.75V-7.813' stroke='#3c3c43' fill='none' stroke-width='1.41731' stroke-miterlimit='10' stroke-dasharray='2.98883 2.98883'/>
+<path d='M146.2886 119.75V-7.813' stroke='#3451b2' fill='none' stroke-width='1.41731' stroke-miterlimit='10' stroke-dasharray='2.98883 2.98883'/>
 <g fill='#3c3c43' transform='matrix(1 0 0 1 174.1104 -59.0744)'>
 <use x='-23.790379' y='119.749624' xlink:href='#g2-51'/>
 </g>

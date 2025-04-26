@@ -4,12 +4,13 @@ Whilst we're on the subject, we might as well make sure that we can multiply a
 matrix by a number. To make this useful, we'd want to ensure that
 
 $$
-\lambda \left( A \vec{v} \right) = \left( \lambda A \right) \vec{v}
+\left( \lambda A \right) \vec{v} = \lambda \left( A \vec{v} \right)
 $$
 
-We know how to work out the left hand side, because $A\vec{v}$ is just a vector,
-and [scaling a vector](../vectors/scaling-vectors) is already defined. To make
-sure the right hand side works out to be the same thing, we have to define
+We know how to work out the right hand side, because $A\vec{v}$ is just a
+vector, and [scaling a vector](../vectors/scaling-vectors) is already defined.
+To make sure the left hand side works out to be the same thing, we have to
+define
 
 $$
 \lambda

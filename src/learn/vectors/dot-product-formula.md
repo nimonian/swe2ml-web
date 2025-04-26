@@ -1,33 +1,9 @@
-# Dot product
+# Dot product formula
 
-## The idea
-
-Mathematicians aren't all that interested in the Hadamard product, but they
-absolutely trip over themselves when it comes to the **dot product**:
-
-$$
-\vec{u} \cdot \vec{v} = |\vec{u}| |\vec{v}| \cos \theta
-$$
-
-where $\theta$ (pronounced _theta_) is the angle between the vectors.
-
-![](../../images/dot-prod.svg)
-
-Here's how I think of this rule: we multiply the length of $\vec{u}$ with the
-length of $\vec{v}$, then we scale them with the penalty factor $\cos \theta$
-according to how perpendicular they are.
-
-![](../../images/dot-prod-cos.svg)
-
-## Component formula
-
-But who on earth has time for measuring the angle between two vectors? I don't
-even own a protractor. Thankfully, it just so turns out that the dot product is
-equal to the sum of the components of the Hadamard product:
-
-$$
-\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \ldots + u_nv_n
-$$
+Even if you believe me that this $|\vec{u}| |\vec{v}| \cos \theta$ number is
+useful, who on earth has time for measuring the angle between two vectors? I
+don't even own a protractor. Good job there's a trick, which I will prove in the
+box below, that simplifies calculating the dot product immensely.
 
 ::: details
 
@@ -70,10 +46,14 @@ And holy shit if that isn't our dot product on the left side of the equation.
 
 :::
 
-This is _wonderful_, because it means we can compute $\vec{u} \cdot \vec{v}$
-without even knowing the value of $\theta$.
+Hilariously, it turns out that the dot product is the sum of the components of
+the Hadamard product:
 
-For example,
+$$
+\vec{u} \cdot \vec{v} = u_1 v_1 + u_2 v_2 + \ldots + u_n v_n
+$$
+
+Now we can very easily compute, for example,
 
 $$
 \begin{aligned}
@@ -83,6 +63,9 @@ $$
 & = 10
 \end{aligned}
 $$
+
+This is _wonderful_, because it means we can compute $\vec{u} \cdot \vec{v}$
+without even knowing the value of $\theta$.
 
 When it comes to our `Vector` class, Python has the `@` infix which is
 [intended to be used](https://peps.python.org/pep-0465/) for the dot product. To
@@ -95,8 +78,6 @@ implement it, we define the `__matmul__` dunder method.
 <<< @/../pycode/models/vector.py#dot_product
 
 :::
-
-## Properties
 
 We can also check a couple of important properties for the dot product.
 

@@ -38,8 +38,8 @@ $$
 \end{aligned}
 $$
 
-It seems obvious enough. But, why this way? The point is, we want to make sure
-that
+It seems obvious enough. But, why is this the most sensible way of defining
+matrix addition? The point is, we want to make sure that
 
 $$
 (A + B) \vec{v} = A \vec{v} + B \vec{v}
@@ -56,7 +56,10 @@ work generalises to any shape of matrix.
 
 $$
 \begin{aligned}
-A \vec{v} + B\vec{v}
+
+(A + B) \vec{v}
+
+& = A \vec{v} + B\vec{v} \\
 
 & =
 \begin{bmatrix} a & b \\ c & d \end{bmatrix} \begin{bmatrix} x \\ y \end{bmatrix}

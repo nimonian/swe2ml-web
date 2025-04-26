@@ -44,7 +44,7 @@ As these expressions both equal the area, they must equal each other, and so
 
 $$
 \begin{aligned}
-z^2 + 2xy & = x^2 + y^2 + 2xy \\
+z^2 + \cancel{2xy} & = x^2 + y^2 + \cancel{2xy} \\
 z^2 & = x^2 + y^2
 \end{aligned}
 $$
@@ -79,10 +79,8 @@ $$
 |\vec{v}| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2}
 $$
 
-Let's implement this in our `Vector` class. We'll override the `abs()` function
-because `abs` stands for "absolute value", which basically means the size,
-irrespective of direction. Just in the same way that `abs(-2)` gives `2`,
-calling `abs(v)` should give the size of the thing.
+Let's implement this in our `Vector` class. We'll override `__abs__` because
+"absolute value" means the size of the thing, irrespective of direction.
 
 ::: code-group
 
@@ -92,43 +90,6 @@ calling `abs(v)` should give the size of the thing.
 
 :::
 
-We said [scalar multiplication](./scaling-vectors) stretches a vector. This
-basically means that $\lambda \vec{v}$ is $\lambda$ times longer than $\vec{v}$.
-Now we have a mathematical formula for the length, we're in a position to prove
-this.
-
-I'm going to put the proof in a dropdown so you know it's optional, but if you
-are in any way dubious of my claims about stretching vectors, you should give it
-a read.
-
-::: details
-
-In words: the length of the vector $\lambda \vec{v}$ is $\lambda$ times the
-length of $\vec{v}$.
-
-In symbols: $|\lambda \vec{v}| = \lambda |\vec{v}|$.
-
-The proof:
-
-$$
-\begin{aligned}
-|\lambda\vec{v}|
-& = \sqrt{(\lambda v_1)^2 + (\lambda v_2)^2 + \ldots + (\lambda v_n)^2} \\
-& = \sqrt{\lambda^2 v_1^2 + \lambda^2 v_2^2 + \ldots + \lambda^2 v_n^2} \\
-& = \sqrt{\lambda^2(v_1^2 + v_2^2 + \ldots + v_n^2)} \\
-& = \sqrt{\lambda^2} \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2} \\
-& = \lambda \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2} \\
-& = \lambda |\vec{v}|
-\end{aligned}
-$$
-
-:::
-
 ## Exercise
 
 <Exercise id="vector-magnitude" />
-
-After doing this exercise a few times, you might start to notice that
-$|\vec{v}|$ is always positive (or $0$). In fact, it's only $0$ if all the
-components are themselves $0$. This all seems clear when you think about
-squaring numbers and adding the results.

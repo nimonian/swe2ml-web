@@ -39,13 +39,7 @@ Writing out the vector components, we get
 $$
 \begin{bmatrix} u_1 \\ u_2 \\ u_3 \end{bmatrix}
 \cdot
-\begin{bmatrix} v_2 w_3 - w_3 v_2 \\ v_3 w_1 - w_1 v_2 \\ v_1 w_2 - w_1 v_3 \end{bmatrix}
-$$
-
-which results in the formula
-
-$$
-u_1 (v_2 w_3 - w_3 v_2) + u_2(v_3 w_1 - w_1 v_2) + u_3(v_1 w_2 - w_1 v_3)
+\begin{bmatrix} v_2 w_3 - v_3 w_2 \\ v_3 w_1 - v_1 w_3 \\ v_1 w_2 - v_2 w_1 \end{bmatrix}
 $$
 
 It turns out that if we "rotate" the position of the vectors in this formula, we

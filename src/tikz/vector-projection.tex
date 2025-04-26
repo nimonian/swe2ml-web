@@ -1,0 +1,21 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \coordinate (O) at (0, 0);
+    \coordinate (A) at (4, 2);
+    \coordinate (A2) at (2, 1);
+    \coordinate (B) at (1, 3);
+
+    \draw[vp-grid] (-1, -1) grid (5, 4);
+    \draw[vp-vector] (O) -- (A) node[below right] {$\vec{u}$};
+    \draw[vp-vector, c-indigo-1] (O) -- (B) node[midway, above left] {$\vec{v}$};
+    \draw pic[vp-angle, angle radius=12pt] {right angle=B--A2--O};
+    \draw pic["$\theta$", vp-angle, angle radius=40pt] {angle=A--O--B};
+    \draw[vp-path, dashed] (A2) -- (B);
+    \draw[vp-vector, c-red-3] (O) -- (A2) node[midway, below, sloped] {$\text{proj}_{\vec{u}}{\vec{v}}$};
+
+\end{tikzpicture}
+\end{document}

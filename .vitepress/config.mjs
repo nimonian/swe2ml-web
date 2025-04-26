@@ -59,7 +59,11 @@ export default defineConfig({
             link: '/learn/vectors/unit-vectors'
           },
           {
-            text: 'Dot product',
+            text: 'The Hadamard product',
+            link: '/learn/vectors/hadamard-product'
+          },
+          {
+            text: 'The dot product',
             link: '/learn/vectors/dot-product'
           },
           {
@@ -67,15 +71,15 @@ export default defineConfig({
             link: '/learn/vectors/cosine-similarity'
           },
           {
-            text: 'Cross product in 2D',
-            link: '/learn/vectors/cross-product-2d'
+            text: 'Vector projections',
+            link: '/learn/vectors/vector-projections'
           },
           {
-            text: 'Cross product in 3D',
-            link: '/learn/vectors/cross-product-3d'
+            text: 'The cross product',
+            link: '/learn/vectors/cross-product'
           },
           {
-            text: 'Triple product',
+            text: 'The triple product',
             link: '/learn/vectors/triple-product'
           }
         ]
@@ -97,8 +101,8 @@ export default defineConfig({
             link: '/learn/matrices/transforming-vectors'
           },
           {
-            text: 'Special transformations',
-            link: '/learn/matrices/special-transformations'
+            text: 'Identity matrix',
+            link: '/learn/matrices/identity-matrix'
           },
           {
             text: 'Matrix addition',
@@ -109,12 +113,12 @@ export default defineConfig({
             link: '/learn/matrices/scaling-matrices'
           },
           {
-            text: 'Matrix multiplication',
-            link: '/learn/matrices/matrix-multiplication'
+            text: 'Matrix composition',
+            link: '/learn/matrices/matrix-composition'
           },
           {
-            text: 'Determinants',
-            link: '/learn/matrices/determinants'
+            text: 'Determinants in 2D',
+            link: '/learn/matrices/determinants-2d'
           },
           {
             text: 'Determinants in 3D',

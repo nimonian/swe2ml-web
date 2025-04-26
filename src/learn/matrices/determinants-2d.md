@@ -60,8 +60,8 @@ A \vec{u} \times A \vec{v}
 
 & = (a u_1 + b u_2)(c v_1 + d v_2) - (c u_1 + d u_2)(a v_1 + b v_2)  \\[6pt]
 
-& = a c u_1 v_1 + a d u_1 v_2 + b c u_2 v_1 + b d u_2 v_2  \\
-& \quad - a c u_1 v_1 - b d u_2 v_2 - a d u_2 v_1 - b d u_2 v_2  \\[6pt]
+& = \cancel{a c u_1 v_1} + a d u_1 v_2 + b c u_2 v_1 + \cancel{b d u_2 v_2}  \\
+& \quad - \cancel{a c u_1 v_1} - b d u_2 v_2 - a d u_2 v_1 - \cancel{b d u_2 v_2}  \\[6pt]
 
 & = ad(u_1v_2 - u_2v_1) - bd(u_1v_2 - u_2v_1)  \\[6pt]
 
@@ -81,7 +81,8 @@ point in that shape by $A$, you now need $|A|S$ paint to cover the new shape.
 
 ::: tip
 
-Transforming space by $A$ dilates areas by $|A|$.
+Transforming a shape by a matrix $A$ dilates the shape's area by a scale factor
+equal to the determinant $|A|$.
 
 :::
 
