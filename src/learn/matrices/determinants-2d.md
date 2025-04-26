@@ -16,8 +16,7 @@ $$
 
 is _really, really important_. So important, in fact, that we give it a special
 name: the **determinant**. If you squint and tilt your head, you might see that
-$|A|$ is the [cross product](../vectors/cross-product-2d.md) of the columns of
-$A$.
+$|A|$ is the [cross product](../vectors/cross-product.md) of the columns of $A$.
 
 Before I start jabbering on about parallelograms, let's write the code.
 
@@ -32,7 +31,7 @@ Before I start jabbering on about parallelograms, let's write the code.
 ## Geometric interpretation
 
 Take two vectors, $\vec{u}$ and $\vec{v}$. We know that the area of the
-parallelogram is given by their [cross product](../vectors/cross-product-2d.md)
+parallelogram is given by their [cross product](../vectors/cross-product.md)
 
 $$
 \vec{u} \times \vec{v} = u_1 v_2 - u_2 v_1
@@ -174,8 +173,7 @@ $$
 = \begin{bmatrix} p \\ q \end{bmatrix}
 $$
 
-What the simultaneous equations are asking for, then, is a
-[linear combination](../vectors/linear-combinations) of
+What the simultaneous equations are asking for, then, is a linear combination of
 $\begin{bmatrix} a \\ c \end{bmatrix}$ and
 $\begin{bmatrix} b \\ d \end{bmatrix}$ that equals some other vector
 $\begin{bmatrix} p \\ q \end{bmatrix}$.

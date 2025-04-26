@@ -5,8 +5,8 @@ arbitrary. I mean, I can transform a vector, too - you don't hear me bragging
 about it. To understand what makes matrices special, we need to understand what
 a **linear transformation** is. Come with me on a journey. Bring tea.
 
-Remember [linear combinations](/learn/vectors/linear-combinations)? This means
-taking two vectors, scaling them then adding them:
+Remember [linear combinations](/learn/linear-algebra/linear-combinations)? This
+means taking two vectors, scaling them then adding them:
 
 $$
 \lambda \vec{u} + \mu \vec{v}

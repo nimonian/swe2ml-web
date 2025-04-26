@@ -1,7 +1,7 @@
 # Triple product
 
-The magnitude of the [cross product](../vectors/cross-product-3d.md) gives us
-the area of the parallelogram determined by two vectors. If we're given three
+The magnitude of the [cross product](../vectors/cross-product.md) gives us the
+area of the parallelogram determined by two vectors. If we're given three
 vectors, however, they determine a **parallelepiped**.
 
 ![](../../images/parallelepiped.svg)
