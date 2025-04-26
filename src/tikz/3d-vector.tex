@@ -1,0 +1,29 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{swe2ml}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles, quotes}
+
+\tdplotsetmaincoords{72}{25} % adjust view angles
+
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords, scale=3.5]
+
+  % Define vectors
+  \coordinate (O) at (0,0,0);
+  \coordinate (A) at (0.7,1,1);
+  \coordinate(Axy) at (0.7,1,0);
+
+  \filldraw[color=c-text-2, opacity=0.1] (-0.5, -0.5, 0) -- (2, -0.5, 0) -- (2, 2, 0) -- (-0.5, 2, 0) -- cycle;
+
+  % Draw axes
+  \draw[vp-axis] (-0.5,0,0) -- (2,0,0) node[anchor=north east]{$x$};
+  \draw[vp-axis] (0,-0.5,0) -- (0,2,0) node[anchor=north]{$y$};
+  \draw[vp-axis] (0,0,-0.5) -- (0,0,1.5) node[anchor=south]{$z$};
+
+  \draw[vp-vector,color=--c-indigo-1] (O) -- (A) node[anchor=south east, midway] {$\vec{v}$};
+  \draw[vp-path, dashed, c-text-3] (O) -- (Axy);
+  \draw[vp-path, dashed, c-text-3] (Axy) -- (A);
+  \draw pic[vp-angle] {right angle=A--Axy--O};
+
+\end{tikzpicture}
+\end{document}

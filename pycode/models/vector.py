@@ -3,8 +3,8 @@ from typing import Iterable, overload
 from math import sqrt
 
 
+# region vector_init
 class Vector:
-    # region vector_init
     def __init__(self, components: Iterable[float]):
         self._components = tuple(components)
 
@@ -124,14 +124,16 @@ class Vector:
                 ]
             )
 
-        if self.dim == other.dim == 2:
-            u, v = Vector((*self, 0)), Vector((*other, 0))
-            return u.cross(v)
-
         raise NotImplemented
 
     __xor__ = cross
     # endregion vector_cross_product
+
+    # region vector_area
+    @classmethod
+    def area(cls, u: Vector, v: Vector):
+        return sqrt((u @ u) * (v @ v) - (u @ v) ** 2)
+        # endregion vector_area
 
     # region vector_triple_product
     @classmethod

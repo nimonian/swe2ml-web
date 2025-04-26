@@ -1,5 +1,6 @@
 from pytest import approx
 from pycode.models.vector import Vector
+from math import sqrt
 
 
 # region test_vector_components
@@ -143,7 +144,7 @@ def test_vector_projection():
 
 
 # region test_vector_cross_product
-def test_vector_cross_product_3d():
+def test_vector_cross_product():
     u = Vector([1, 2, 3])
     v = Vector([4, 5, 6])
     n = u ^ v
@@ -151,15 +152,25 @@ def test_vector_cross_product_3d():
     assert n == Vector([-3, 6, -3])
     assert u @ n == 0
     assert v @ n == 0
-
-
-def test_vector_cross_product_2d():
-    u = Vector([3, 1])
-    v = Vector([2, 3])
-    n = u ^ v
-
-    assert n == Vector([0, 0, 7])  # shaken, not stirred
     # endregion test_vector_cross_product
+
+
+# region test_vector_area
+def test_vector_area_2d():
+    u = Vector([2, 1])
+    v = Vector([1, 3])
+
+    area = Vector.area(u, v)
+    assert area == approx(5.0)
+
+
+def test_vector_area_3d():
+    u = Vector([1, 2, 3])
+    v = Vector([4, 5, 6])
+
+    area = Vector.area(u, v)
+    assert area == approx(sqrt(54))
+    # endregion test_vector_area
 
 
 # region test_linear_combination

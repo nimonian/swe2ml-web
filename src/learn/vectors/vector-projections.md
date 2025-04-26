@@ -10,7 +10,7 @@ onto $\vec{u}$ and is calculated by the formula
 
 $$
 \text{proj}_{\vec{u}} \vec{v}
-= \frac{\vec{u} \cdot \vec{v}}{\vec{u} \cdot \vec{u}} \, \vec{u}
+= \frac{\vec{v} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \, \vec{u}
 $$
 
 ::: details
@@ -29,7 +29,7 @@ want to deal with $\theta$ all the time. Good news! In our study of
 [cosine similarity](./cosine-similarity) we realised that
 
 $$
-\cos \theta = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}||\vec{v}|}
+\cos \theta = \frac{\vec{v} \cdot \vec{u}}{|\vec{v}||\vec{u}|}
 $$
 
 and so
@@ -38,11 +38,11 @@ $$
 \begin{aligned}
 \text{proj}_{\vec{u}} \vec{v}
 
-& = \left(|\vec{v}|  \frac{\vec{u} \cdot \vec{v}}{|\vec{u}||\vec{v}|} \right) \, \frac{\vec{u}}{|\vec{u}|} \\[5pt]
+& = \left(\cancel{|\vec{v}|}  \frac{\vec{v} \cdot \vec{u}}{\cancel{|\vec{v}|}|\vec{u}|} \right) \, \frac{\vec{u}}{|\vec{u}|} \\[5pt]
 
-& = \frac{\vec{u} \cdot \vec{v}}{|\vec{u}|^2} \, \vec{u} \\[5pt]
+& = \frac{\vec{v} \cdot \vec{u}}{|\vec{u}|^2} \, \vec{u} \\[5pt]
 
-& = \frac{\vec{u} \cdot \vec{v}}{\vec{u} \cdot \vec{u}} \, \vec{u}
+& = \frac{\vec{v} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \, \vec{u}
 \end{aligned}
 $$
 
@@ -62,9 +62,9 @@ $$
 \begin{aligned}
 \text{proj}_{\vec{u}} \vec{v}
 
-& = \frac{\vec{u} \cdot \vec{v}}{\vec{u} \cdot \vec{u}} \, \vec{u} \\[5pt]
+& = \frac{\vec{v} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \, \vec{u} \\[5pt]
 
-& = \frac{4 \times 1 + 2 \times 3}{4^2 + 2^2} \, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \\[5pt]
+& = \frac{1 \times 4 + 3 \times 2}{4^2 + 2^2} \, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \\[5pt]
 
 & = \frac{1}{2} \, \begin{bmatrix} 4 \\ 2 \end{bmatrix} \\[5pt]
 
@@ -76,7 +76,7 @@ If you count the squares in the image at the top of the page, you'll see that
 this seems like the correct answer.
 
 For our implementation in `Vector`, I'll choose `v.proj(u)` to mean "project `v`
-onto `u`" as that's how I think.
+onto `u`" as that's how I think about it.
 
 ::: code-group
 
@@ -85,3 +85,7 @@ onto `u`" as that's how I think.
 <<< @/../pycode/models/vector.py#vector_projection
 
 :::
+
+## Exercise
+
+<Exercise id="vector-projections" />

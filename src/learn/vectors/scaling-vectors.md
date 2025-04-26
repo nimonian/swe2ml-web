@@ -40,9 +40,9 @@ To implement this in `Vector`, we will use the `__mul__` method to override the
 <<< @/../pycode/models/vector_test.py#test_vector_scalar_multiplication
 
 ```py [vector.py]
-def __mul__(self, other: float) -> Vector:
-    if isinstance(other, (int, float)):
-        return Vector(x * other for x in self)
+def __mul__(self, scalar: float) -> Vector:
+    if isinstance(scalar, (int, float)):
+        return Vector(x * scalar for x in self)
 
     return NotImplemented
 
