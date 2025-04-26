@@ -28,7 +28,7 @@ $xy$-plane to form their own coordinate system. Here's how the $ab$-plane looks:
 
 This picture should convince you that _any_ point in space could be described as
 some linear combination of $\vec{a}$ and $\vec{b}$. This is a pretty important
-concept which we expand upon in [basis vectors]().
+concept which we expand upon in basis vectors.
 
 Of course, if $\vec{a}$ and $\vec{b}$ happened to be parallel, we're in trouble
 because we can't actually get off the direction they both lie in!
