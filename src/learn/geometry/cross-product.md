@@ -33,7 +33,7 @@ see you in the box.
 Curious one, aren't you!
 
 To ensure that $\vec{n}$ is perpendicular to $\vec{u}$ and $\vec{v}$, it
-[is enough](./orthogonality) to make sure that the dot product is $0$
+[is enough](../vectors/orthogonality) to make sure that the dot product is $0$
 
 $$
 \begin{aligned}
