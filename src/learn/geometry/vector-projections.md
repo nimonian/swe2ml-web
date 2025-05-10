@@ -15,7 +15,7 @@ $$
 
 ::: tip
 
-[Recall](../vectors/dot-prod-properties#vector-magnitude) that
+[Recall](../vectors/magnitude-revisited) that
 $|\vec{u}|^2 = \vec{u} \cdot \vec{u}$. The above formula is more convenient to
 compute as
 
