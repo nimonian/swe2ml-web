@@ -10,8 +10,21 @@ onto $\vec{u}$ and is calculated by the formula
 
 $$
 \text{proj}_{\vec{u}} \vec{v}
+= \frac{\vec{v} \cdot \vec{u}}{|\vec{u}|^2} \, \vec{u}
+$$
+
+::: tip
+
+[Recall](../vectors/dot-prod-properties#vector-magnitude) that
+$|\vec{u}|^2 = \vec{u} \cdot \vec{u}$. The above formula is more convenient to
+compute as
+
+$$
+\text{proj}_{\vec{u}} \vec{v}
 = \frac{\vec{v} \cdot \vec{u}}{\vec{u} \cdot \vec{u}} \, \vec{u}
 $$
+
+:::
 
 ::: details
 
@@ -50,6 +63,8 @@ which is slightly more practical to compute, especially by hand.
 
 :::
 
+## Example
+
 For example, let
 
 $$
@@ -74,6 +89,8 @@ $$
 
 If you count the squares in the image at the top of the page, you'll see that
 this seems like the correct answer.
+
+## Code
 
 For our implementation in `Vector`, I'll choose `v.proj(u)` to mean "project `v`
 onto `u`" as that's how I think about it.

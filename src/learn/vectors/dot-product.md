@@ -1,7 +1,5 @@
 # Dot product
 
-## The idea
-
 Mathematicians aren't all that interested in the Hadamard product, but they
 absolutely trip over themselves when it comes to the **dot product**:
 
@@ -19,110 +17,22 @@ according to how perpendicular they are.
 
 ![](../../images/dot-prod-cos.svg)
 
-## Component formula
+This is actually consistent with plain old regular numbers. With regular
+numbers, we only have the options $\theta = 0$ (pointing in the same direction,
+i.e. both positive or both negative) or $\theta = 180$ (pointing in the opposite
+direction, i.e. one positive the other negative).
 
-But who on earth has time for measuring the angle between two vectors? I don't
-even own a protractor. Thankfully, it just so turns out that the dot product is
-equal to the sum of the components of the Hadamard product:
+## Code
 
-$$
-\vec{u} \cdot \vec{v} = u_1v_1 + u_2v_2 + \ldots + u_nv_n
-$$
+Nope! As we'll see in the next section, a bit of geometry allows us to implement
+dot product without knowing $\theta$. Which is great news, because measuring
+$\theta$ is a pain in the ass.
 
-::: details
-
-I'll do it for $2$ dimensions - the only difficulty in generalising is fiddling
-with notation.
-
-![](../../images/dot-prod-proof.svg)
-
-By subtracting the vectors and taking the magnitude, we see that
-
-$$
-\begin{aligned}
-|\vec{v} - \vec{u}|^2
-& = (v_1 - u_1)^2 + (v_2 - u_2)^2 \\
-& = v_1^2 + u_1^2 - 2u_1v_1 + v_2^2 + u_2^2 - 2u_2v_2 \\
-& = (u_1^2 + u_2^2) + (v_1^2 + v_2^2) - 2u_1v_1 - 2u_2v_2 \\
-& = |\vec{u}|^2 + |\vec{v}|^2 - 2(u_1v_1 + u_2v_2)
-\end{aligned}
-$$
-
-On the other hand, we have from the
-[cosine rule](https://mathematico.netlify.app/pure/trigonometry/cos-rule/) that
-
-$$
-|\vec{v} - \vec{u}|^2 = |\vec{u}|^2 + |\vec{v}|^2 - 2|\vec{u}||\vec{v}| \cos \theta
-$$
-
-Both of these results equal $|\vec{v} - \vec{u}|^2$, and therefore they must be
-equal to each other:
-
-$$
-\begin{aligned}
-\cancel{|\vec{u}|^2} + \cancel{|\vec{v}|^2} - 2|\vec{u}||\vec{v}| \cos \theta & = \cancel{|\vec{u}|^2} + \cancel{|\vec{v}|^2} - 2(u_1v_1 + u_2v_2) \\
-\cancel{- 2}|\vec{u}||\vec{v}| \cos \theta & = \cancel{- 2}(u_1v_1 + u_2v_2) \\
-|\vec{u}||\vec{v}| \cos \theta & = u_1v_1 + u_2v_2 \\
-\end{aligned}
-$$
-
-And holy shit if that isn't our dot product on the left side of the equation.
-
-:::
-
-This is _wonderful_, because it means we can compute $\vec{u} \cdot \vec{v}$
-without even knowing the value of $\theta$.
-
-For example,
-
-$$
-\begin{aligned}
-\begin{bmatrix} 1 \\ 3 \end{bmatrix} \cdot \begin{bmatrix} 4 \\ 2 \end{bmatrix}
-& = 1 \times 4 + 3 \times 2 \\
-& = 4 + 6 \\
-& = 10
-\end{aligned}
-$$
-
-When it comes to our `Vector` class, Python has the `@` infix which is
-[intended to be used](https://peps.python.org/pep-0465/) for the dot product. To
-implement it, we define the `__matmul__` dunder method.
-
-::: code-group
-
-<<< @/../pycode/models/vector_test.py#test_dot_product
-
-<<< @/../pycode/models/vector.py#dot_product
-
-:::
-
-## Properties
-
-We can also check a couple of important properties for the dot product.
-
-1. We can "factor out" scalars
-
-   $$
-   \left( \lambda\vec{u} \right) \cdot \left( \mu\vec{v} \right) = \lambda
-   \mu \left( \vec{u} \cdot \vec{v} \right)
-   $$
-
-2. Dotting a vector with itself gives the square of its magnitude
-
-   $$ \vec{u} \cdot \vec{u} = |\vec{u}|^2 $$
-
-3. Two vectors have $0$ dot product if, and only if, they are perpendicular (at
-   $90^{\circ}$) to each other
-
-   $$
-   \vec{u} \cdot \vec{v} = 0 \quad \Leftrightarrow \quad \vec{u} \perp \vec{v}
-   $$
-
-<<< @/../pycode/models/vector_test.py#test_dot_product_2
-
-There's no work to do in `Vector` - this is all guaranteed by the definition of
-the dot product.
+```py
+def dot(u: Vector, v: Vector) -> float:
+    raise NotImplementedError
+```
 
 ## Exercise
 
-<Exercise id="dot-product-formula" />
+<Exercise id="dot-product" />

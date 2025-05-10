@@ -1,0 +1,38 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{swe2ml}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles, quotes}
+
+\tdplotsetmaincoords{78}{20} % adjust view angles
+
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords, scale=1.5]
+
+  \coordinate(O) at (-2, -2, -2);
+  \coordinate (P) at (-2, -2, 0);
+  \coordinate (U) at (8, 0, 0);
+  \coordinate (V) at (0, 8, 0);
+
+  \coordinate(A) at ($(P)$);
+  \coordinate(B) at ($(P)+(U)$);
+  \coordinate(C) at ($(P)+(U)+(V)$);
+  \coordinate(D) at ($(P)+(V)$);
+
+  \coordinate(P0) at (0, 0, 0);
+  \coordinate(Q) at (3, 2, 0);
+  \coordinate(N0) at (0, 0, 0);
+  \coordinate(N1) at (0, 0, 2);
+
+  \filldraw[color=c-text-1] (O) circle[vp-point] node[below left, xshift=-4pt, yshift=-4pt]{$O$};
+  \draw[vp-vector, c-text-2, dashed] (O) -- (P0) node[midway, above left]{$\vec{p}$};
+  \draw[vp-vector, c-text-2, dashed] (O) -- (Q) node[midway, below right]{$\vec{q}$};
+
+  \filldraw[color=c-indigo-1, opacity=0.25] (A) -- (B) -- (C) -- (D) -- cycle;
+
+  \draw[vp-vector, c-text-1] (N0) -- (N1) node[above]{$\vec{n}$};
+  \draw pic[vp-angle] {right angle=N1--N0--Q};
+
+  \draw[vp-vector] (P0) -- (Q) node[midway, above]{$\vec{q} - \vec{p}$};
+
+\end{tikzpicture}
+\end{document}

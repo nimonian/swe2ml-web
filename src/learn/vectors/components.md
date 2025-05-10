@@ -1,4 +1,4 @@
-# Components and dimensions
+# Components
 
 A vector is pretty much a tuple with a bunch of extra methods and a few
 centuries of psychological baggage. We're fairly accustomed to the idea of
@@ -25,8 +25,12 @@ But we think of a vector as an arrow:
 
 All of these are the vector $\begin{bmatrix} 3 \\ 2 \end{bmatrix}$, they all say
 _go three in the $x$ direction and two in the $y$ direction_. The values $3$ and
-$2$ are called the **components** of the vector. With this in mind, let's start
-our vector class.
+$2$ are called the **components** of the vector.
+
+## Code
+
+As you may have guessed from my choice of language so far, I'll be modeling
+vectors as a class. Let's kick off our class by adding a `components` property.
 
 ::: code-group
 
@@ -46,30 +50,8 @@ thanks in advance.
 
 :::
 
-The **dimension** of a vector is just the number of components it has. The
-vector
-
-$$
-\vec{v} = \begin{bmatrix}
-x \\ y \\ z
-\end{bmatrix}
-$$
-
-is $3$-dimensional, and can be drawn on $x, y, z$ axes.
-
-![](../../images/3d-vector.svg)
-
-We can even have $n$-dimensional vectors, with $n$ components. At this point, we
-should give up on the alphabet and use subscript notation.
-
-$$
-\vec{v} = \begin{bmatrix}
-v_1 \\ v_2 \\ \vdots \\ v_n
-\end{bmatrix}
-$$
-
-Let's make sure we can easily get to the dimension and components of our
-vectors, as well as loop through the components.
+Let's make sure we can easily get to the components of our vectors, including
+slicing and looping.
 
 ::: code-group
 
@@ -86,17 +68,6 @@ just the godforsaken world we live in.
 
 :::
 
-Finally, let's ensure that two vectors are considered equal if they have the
-same components:
-
-::: code-group
-
-<<< @/../pycode/models/vector_test.py#test_vector_equality
-
-<<< @/../pycode/models/vector.py#vector_equality
-
-:::
-
 ## Exercise
 
-<Exercise id="components-and-dimensions" />
+<Exercise id="components" />

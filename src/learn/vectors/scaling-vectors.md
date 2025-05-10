@@ -32,6 +32,25 @@ feel fancy.
 
 :::
 
+If we remember the "just glue them together" principle from
+[adding vectors](./adding-vectors#visual-interpretation), we might realise
+before drawing anything that multiplying $\vec{v}$ by $\lambda$ sort of
+stretches the arrow $\vec{v}$ by $\lambda$. Or, we might not. It doesn't matter
+because we're about to draw something anyway.
+
+![](../../images/scalar-multiplication.svg)
+
+Multiplying by a negative number will reverse the direction of $\vec{v}$.
+
+![](../../images/scalar-multiplication-negative.svg)
+
+In words,
+
+- $\vec{v}$ says _go right by two and up by one_
+- therefore $-2\vec{v}$ says _go left by four and down by two_
+
+## Code
+
 To implement this in `Vector`, we will use the `__mul__` method to override the
 `*` operator.
 
@@ -53,23 +72,6 @@ def __truediv__(self, scalar: float) -> Vector:
 ```
 
 :::
-
-If we remember the "just glue them together" principle from
-[adding vectors](./adding-vectors#visual-interpretation), we might realise
-before drawing anything that multiplying $\vec{v}$ by $\lambda$ sort of
-stretches the arrow $\vec{v}$ by $\lambda$. Or, we might not. It doesn't matter
-because we're about to draw something anyway.
-
-![](../../images/scalar-multiplication.svg)
-
-Multiplying by a negative number will reverse the direction of $\vec{v}$.
-
-![](../../images/scalar-multiplication-negative.svg)
-
-In words,
-
-- $\vec{v}$ says _go right by two and up by one_
-- therefore $-2\vec{v}$ says _go left by four and down by two_
 
 ## Exercise
 

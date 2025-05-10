@@ -1,0 +1,16 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{swe2ml}
+\usetikzlibrary{angles, quotes}
+
+\begin{document}
+\begin{tikzpicture}[scale=1.5]
+    \coordinate(O) at (0, 0);
+    \coordinate(A) at (3, 1);
+    \coordinate(B) at (-1, 3);
+
+    \draw[vp-vector, c-indigo-1] (0, 0) -- (A) node[midway, below right]{$\vec{v}$};
+    \draw[vp-vector, c-red-1] (0, 0) -- (B) node[midway, below left]{$\vec{n}$};
+    
+    \draw pic[vp-angle, angle radius=12pt] {right angle=A--O--B};
+\end{tikzpicture}
+\end{document}

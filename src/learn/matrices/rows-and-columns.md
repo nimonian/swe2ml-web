@@ -68,8 +68,49 @@ the rapture will come and set us free. Until then, we just have to suck it up.
 
 :::
 
+Sometimes, it might be convenient to take the columns of a matrix as vectors,
+like
+
+$$
+A
+
+= \left[ \begin{array}{c|c}
+2 & -5 \\
+0 & 3 \\
+7 & 1
+\end{array} \right]
+
+= \left[ \begin{array}{c|c}
+\vec{c_1} & \vec{c_2}
+\end{array} \right]
+$$
+
+and sometimes to take the rows as vectors, like
+
+$$
+A
+
+= \left[ \begin{array}{cc}
+2 & -5 \\ \hline
+0 & 3 \\ \hline
+7 & 1
+\end{array} \right]
+
+= \left[ \begin{array}{cc}
+\vec{r_1} \\ \hline
+\vec{r_2} \\ \hline
+\vec{r_3}
+\end{array} \right]
+$$
+
+It helps reuse code from the `Vector` class, as it allows stuff like
+
+```py
+[k * Vector(row) for row in A.rows]
+```
+
 Unlike vectors, which we can imagine as being arrows in space (if we want), we
-can't really visualise a matrix. As we will learn in the next section, a matrix
+can't really visualise a matrix in the same way. As we will soon learn, a matrix
 represents an **action** rather than a **thing**.
 
 ## Exercise

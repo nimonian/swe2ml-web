@@ -36,6 +36,8 @@ The value of $\cos \theta$ is sometimes called the **cosine similarity**.
 
 ![](../../images/cos-theta.svg)
 
+## Code
+
 This seems important enough - let's get cosine similarity into `Vector`.
 
 ::: code-group
@@ -46,7 +48,11 @@ This seems important enough - let's get cosine similarity into `Vector`.
 
 :::
 
-## Using cosine similarity
+## Exercise
+
+<Exercise id="cosine-similarity" />
+
+## Application
 
 Suppose we had some samples of handwriting like
 
@@ -83,7 +89,3 @@ the brightness of `im9a` then its cosine similarity to `im9b` wouldn't change at
 all. This is because "overall brightness" of our image vectors is equivalent to
 their magnitude. On the other hand, sliding all the pixes to the left a bit
 would have a profound effect on the cosine similarity.
-
-## Exercise
-
-<Exercise id="cosine-similarity" />

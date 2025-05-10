@@ -35,8 +35,12 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: 'Components and dimensions',
-            link: '/learn/vectors/components-and-dimensions'
+            text: 'Components',
+            link: '/learn/vectors/components'
+          },
+          {
+            text: 'Dimensions',
+            link: '/learn/vectors/dimensions'
           },
           {
             text: 'Adding vectors',
@@ -59,32 +63,76 @@ export default defineConfig({
             link: '/learn/vectors/unit-vectors'
           },
           {
-            text: 'The Hadamard product',
+            text: 'Hadamard product',
             link: '/learn/vectors/hadamard-product'
           },
           {
-            text: 'The dot product',
-            link: '/learn/vectors/dot-product'
+            text: 'Dot product',
+            link: '/learn/vectors/dot-product',
+            items: [
+              {
+                text: 'Component formula',
+                link: '/learn/vectors/dot-prod-formula'
+              },
+              {
+                text: 'Magnitude revisited',
+                link: '/learn/vectors/magnitude-revisited'
+              },
+              {
+                text: 'Cosine similarity',
+                link: '/learn/vectors/cosine-similarity'
+              }
+            ]
           },
           {
-            text: 'Cosine similarity',
-            link: '/learn/vectors/cosine-similarity'
+            text: 'Orthogonality',
+            link: '/learn/vectors/orthogonality'
+          }
+        ]
+      },
+      {
+        text: 'Geometry',
+        collapsed: true,
+        items: [
+          {
+            text: 'Parallelograms',
+            link: '/learn/geometry/parallelograms'
+          },
+          {
+            text: 'Cross product',
+            link: '/learn/geometry/cross-product',
+            items: [
+              {
+                text: 'Area property',
+                link: '/learn/geometry/cross-product-area'
+              }
+            ]
+          },
+          {
+            text: 'Triple product',
+            link: '/learn/geometry/triple-product'
+          },
+          {
+            text: 'Generalised cross product',
+            link: '/learn/geometry/generalised-cross-product'
+          },
+          {
+            text: 'Volumes'
+          },
+          {
+            text: 'Areas'
+          },
+          {
+            text: 'Planes',
+            link: '/learn/geometry/planes'
+          },
+          {
+            text: 'Plane through three points',
+            link: '/learn/geometry/plane-through-three-points'
           },
           {
             text: 'Vector projections',
-            link: '/learn/vectors/vector-projections'
-          },
-          {
-            text: 'The cross product',
-            link: '/learn/vectors/cross-product'
-          },
-          {
-            text: 'Parallelograms',
-            link: '/learn/vectors/parallelograms'
-          },
-          {
-            text: 'The triple product',
-            link: '/learn/vectors/triple-product'
+            link: '/learn/geometry/vector-projections'
           }
         ]
       },

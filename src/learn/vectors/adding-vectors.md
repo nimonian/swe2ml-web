@@ -37,17 +37,6 @@ u_1 + v_1 \\ u_2 + v_2 \\ \vdots \\ u_n + v_n
 \end{bmatrix}
 $$
 
-To implement vector addition in our `Vector` class, we can override the `+`
-operator by defining an `__add__` method.
-
-::: code-group
-
-<<< @/../pycode/models/vector_test.py#test_vector_addition
-
-<<< @/../pycode/models/vector.py#vector_addition
-
-:::
-
 We can interpret vector addition in a visual way. If
 
 $$
@@ -74,6 +63,19 @@ $$
 I sometimes say that, if points are like a specific times of the day, then
 vectors are more like **durations**. We can't add times, but we can add
 durations to get new durations.
+
+## Code
+
+To implement vector addition in our `Vector` class, we can override the `+`
+operator by defining an `__add__` method.
+
+::: code-group
+
+<<< @/../pycode/models/vector_test.py#test_vector_addition
+
+<<< @/../pycode/models/vector.py#vector_addition
+
+:::
 
 ## Exercise
 

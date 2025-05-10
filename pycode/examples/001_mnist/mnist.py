@@ -12,5 +12,4 @@ v9a = Vector(*im9a.getdata())
 v9b = Vector(*im9b.getdata())
 v5 = Vector(*im5.getdata())
 
-print(v9a.cosine(v9b))  # 0.582...
-print(v9a.cosine(v5))  # 0.373...
+print(v9a)

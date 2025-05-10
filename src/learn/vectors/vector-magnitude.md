@@ -79,6 +79,8 @@ $$
 |\vec{v}| = \sqrt{v_1^2 + v_2^2 + \ldots + v_n^2}
 $$
 
+## Code
+
 Let's implement this in our `Vector` class. We'll override `__abs__` because
 "absolute value" means the size of the thing, irrespective of direction.
 
@@ -86,7 +88,10 @@ Let's implement this in our `Vector` class. We'll override `__abs__` because
 
 <<< @/../pycode/models/vector_test.py#test_vector_magnitude
 
-<<< @/../pycode/models/vector.py#vector_magnitude
+```python [vector.py]
+def __abs__(self) -> float:
+    return sqrt(sum(x**2 for x in self))
+```
 
 :::
 

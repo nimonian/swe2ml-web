@@ -1,24 +1,39 @@
-# The cross product
+# Cross product
 
-The cross product is a strange one: given vectors $\vec{u}$ and $\vec{v}$ in $3$
-dimensions, it returns a vector $\vec{n} = \vec{u} \times \vec{v}$ which is
-perpendicular (or _normal_) to both of them.
+If we have two vectors in $3$ dimensions, their **cross product**
+$\vec{u} \times \vec{v}$ gives a third vector $\vec{n}$ which is perpendicular
+to both $\vec{u}$ and $\vec{v}$.
 
 ![](../../images/cross-prod-normal.svg)
 
 It turns out that the correct components for this vector are
 
 $$
-\vec{u} \times \vec{v} =
+\vec{n} = \vec{u} \times \vec{v} =
 \begin{bmatrix}
 u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1
 \end{bmatrix}
 $$
 
+It's a pretty fun exercise to **check** that
+
+$$
+\begin{aligned}
+\vec{n} \cdot \vec{u} & = 0 \\
+\vec{n} \cdot \vec{v} & = 0
+\end{aligned}
+$$
+
+It's less fun to **derive** $\vec{u} \times \vec{v}$ from scratch, but if you
+really want to know how we could ever have come up with this normal vector, I'll
+see you in the box.
+
 ::: details
 
-To ensure that $\vec{n}$ is perpendicular to $\vec{u}$ and $\vec{v}$, it is
-enough to make sure that the dot product is $0$:
+Curious one, aren't you!
+
+To ensure that $\vec{n}$ is perpendicular to $\vec{u}$ and $\vec{v}$, it
+[is enough](./orthogonality) to make sure that the dot product is $0$
 
 $$
 \begin{aligned}
@@ -62,7 +77,7 @@ n_2 = n_3 \frac{u_3 v_1 - u_1 v_3}{u_1 v_2 - u_2 v_1}
 $$
 
 Since there are two equations and three unknowns, we can let $n_3$ be anything
-we like. As you can see, it would be most convenient if
+we like (except $0$). As you can see, it would be most convenient if
 $n_3 = u_1 v_2 - u_2 v_1$, in which case we get
 
 $$
@@ -72,6 +87,8 @@ u_2 v_3 - u_3 v_2 \\ u_3 v_1 - u_1 v_3 \\ u_1 v_2 - u_2 v_1
 $$
 
 :::
+
+## Code
 
 Let's get this into our class before my head explodes.
 
