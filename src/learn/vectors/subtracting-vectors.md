@@ -22,6 +22,17 @@ $$
 \end{aligned}
 $$
 
+In combination with vector magnitude, vector subtraction is particularly useful,
+since
+
+$$
+|\vec{v} - \vec{u}|
+$$
+
+represents the distance from $\vec{u}$ to $\vec{v}$.
+
+## Code
+
 Let's get this into our `Vector` class:
 
 ::: code-group
@@ -36,15 +47,6 @@ This implementation is clever, isn't it? Mathematics enjoys this efficiency,
 too. We like to say that $\vec{v} - \vec{u} = \vec{v} + (-\vec{u})$ to avoid
 defining a new operation called "subtraction" - it seems wasteful when we can
 just combine addition with scalar multiplication.
-
-In combination with vector magnitude, vector subtraction is particularly useful,
-since
-
-$$
-|\vec{v} - \vec{u}|
-$$
-
-represents the distance from $\vec{u}$ to $\vec{v}$.
 
 ## Exercise
 

@@ -9,9 +9,65 @@ def test_vector_components():
     assert v.components == (1, 2, 3, 4)
 
 
+def test_vector_equality():
+    assert Vector([1, 2, 3]) == Vector([1, 2, 3])
+    assert Vector([1, 2, 3]) != Vector([1, 2, 4])
+    # endregion test_vector_components
+
+
 def test_vector_repr():
     assert repr(Vector([1, 2, 3])) == "Vector(1, 2, 3)"
-    # endregion test_vector_components
+
+
+# region test_vector_items
+def test_vector_getitem():
+    v = Vector([1, 2, 3])
+    assert v[0] == 1
+    assert v[1] == 2
+    assert v[2] == 3
+
+
+def test_vector_slice():
+    v = Vector([1, 2, 3, 4])
+    assert v[1:3] == Vector([2, 3])
+
+
+def test_vector_iter():
+    v = Vector([1, 2, 3])
+    assert list(v) == [1, 2, 3]
+    # endregion test_vector_items
+
+
+# region test_vector_dimension
+def test_vector_dimension():
+    u = Vector([1, 2, 3])
+    v = Vector([4, 5])
+    assert u.dim == 3
+    assert v.dim == 2
+    # endregion test_vector_dimension
+
+
+# region test_vector_addition
+def test_vector_addition():
+    u = Vector([1, 2])
+    v = Vector([3, 4])
+    assert u + v == Vector([4, 6])
+    assert u + v == v + u
+    # endregion test_vector_addition
+
+
+# region test_vector_scalar_multiplication
+def test_vector_scalar_multiplication():
+    v = Vector([2, 3])
+    assert v * 2 == Vector([4, 6])
+    assert 2 * v == v * 2
+    assert v + v == 2 * v
+
+
+def test_vector_scalar_division():
+    v = Vector([1, 2, -4, 0])
+    assert v / 2 == Vector([0.5, 1, -2, 0])
+    # endregion test_vector_scalar_multiplication
 
 
 # region test_vector_subtraction
@@ -25,57 +81,6 @@ def test_vector_subtraction():
     v = Vector([2, 3])
     assert v - u == Vector([-2, 4])
     # endregion test_vector_subtraction
-
-
-# region test_vector_equality
-def test_vector_equality():
-    assert Vector([1, 2, 3]) == Vector([1, 2, 3])
-    assert Vector([1, 2, 3]) != Vector([1, 2, 4])
-    # endregion test_vector_equality
-
-
-# region test_vector_items
-def test_vector_dimension():
-    u = Vector([1, 2, 3])
-    v = Vector([4, 5])
-    assert u.dim == 3
-    assert v.dim == 2
-
-
-def test_vector_getitem():
-    v = Vector([1, 2, 3])
-    assert v[0] == 1
-    assert v[1] == 2
-    assert v[2] == 3
-
-
-def test_vector_iter():
-    v = Vector([1, 2, 3])
-    assert list(v) == [1, 2, 3]
-    # endregion test_vector_items
-
-
-# region test_vector_addition
-def test_vector_addition():
-    v1 = Vector([1, 2])
-    v2 = Vector([3, 4])
-    assert v1 + v2 == Vector([4, 6])
-    assert v2 + v1 == Vector([4, 6])
-    # endregion test_vector_addition
-
-
-# region test_vector_scalar_multiplication
-def test_vector_scalar_multiplication():
-    v = Vector([2, 3])
-    assert v * 2 == Vector([4, 6])
-    assert 2 * v == Vector([4, 6])
-    assert v + v == 2 * v
-
-
-def test_vector_scalar_division():
-    v = Vector([1, 2, -4, 0])
-    assert v / 2 == Vector([0.5, 1, -2, 0])
-    # endregion test_vector_scalar_multiplication
 
 
 # region test_vector_magnitude
@@ -96,7 +101,7 @@ def test_vector_unit():
 
 
 # region test_hadamard_product
-def test_vector_hadamard():
+def test_vector_hadamard_product():
     u = Vector([3, 2])
     v = Vector([2, 4])
     assert u * v == Vector([6, 8])
@@ -135,6 +140,14 @@ def test_vector_cosine():
     # endregion test_vector_cosine
 
 
+# region test_vector_perp
+def test_vector_perp():
+    u = Vector([1, 3])
+    v = u.perp()
+    assert u @ v == 0
+    # endregion test_vector_perp
+
+
 # region test_vector_projection
 def test_vector_projection():
     u = Vector([4, 2])
@@ -144,10 +157,10 @@ def test_vector_projection():
 
 
 # region test_vector_cross_product
-def test_vector_cross_product():
+def test_vector_cross_product_3d():
     u = Vector([1, 2, 3])
     v = Vector([4, 5, 6])
-    n = u ^ v
+    n = Vector.cross([u, v])
 
     assert n == Vector([-3, 6, -3])
     assert u @ n == 0
@@ -156,20 +169,14 @@ def test_vector_cross_product():
 
 
 # region test_vector_area
-def test_vector_area_2d():
-    u = Vector([2, 1])
-    v = Vector([1, 3])
-
-    area = Vector.area(u, v)
-    assert area == approx(5.0)
-
-
-def test_vector_area_3d():
+def test_vector_area():
     u = Vector([1, 2, 3])
     v = Vector([4, 5, 6])
 
     area = Vector.area(u, v)
+
     assert area == approx(sqrt(54))
+    assert area == approx(abs(Vector.cross([u, v])))
     # endregion test_vector_area
 
 
@@ -182,16 +189,23 @@ def test_linear_combination():
     # endregion test_linear_combination
 
 
+def test_vector_vol_2d():
+    v1 = Vector([4, 2])
+    v2 = Vector([1, 3])
+
+    assert Vector.vol([v1, v2]) == 10
+
+
 # region test_vector_triple_product
-def test_vector_triple_product():
+def test_vector_vol_3d():
     u = Vector([0, 4, 5])
     v = Vector([2, -3, 1])
     w = Vector([7, -1, 2])
 
-    assert Vector.triple(u, v, w) == 107
+    assert Vector.vol([u, v, w]) == 107
     # endregion test_vector_triple_product
 
     # region test_vector_triple_product_2
-    assert Vector.triple(w, u, v) == 107
-    assert Vector.triple(v, w, u) == 107
+    assert Vector.vol([w, u, v]) == 107
+    assert Vector.vol([v, w, u]) == 107
     # endregion test_vector_triple_product_2

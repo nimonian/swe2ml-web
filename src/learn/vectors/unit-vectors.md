@@ -75,19 +75,8 @@ $$
 This, I guarantee you, is a unit vector. Go ahead and hit it with Pythagoras -
 it'll be near as damnit $1$.
 
-We'll add a method to our class to create a unit vector from any given vector.
-
-::: code-group
-
-<<< @/../pycode/models/vector_test.py#test_vector_unit
-
-<<< @/../pycode/models/vector.py#vector_unit
-
-:::
-
-I'll use $\hat{v}$ if we ever need to specify that a vector is a unit.
-
-So what we've been saying in this page is
+I'll use $\hat{v}$ if we ever need to specify that a vector is a unit. So what
+we've been saying in this page is
 
 $$
 \hat{v} = \frac{\vec{v}}{|\vec{v}|}
@@ -97,6 +86,18 @@ Geometrically, $\hat{v}$ has the same direction as $\vec{v}$, but lies on the
 unit circle (assuming we draw from the origin).
 
 ![](../../images/unit-vector.svg)
+
+## Code
+
+We'll add a method to our class to create a unit vector from any given vector.
+
+::: code-group
+
+<<< @/../pycode/models/vector_test.py#test_vector_unit
+
+<<< @/../pycode/models/vector.py#vector_unit
+
+:::
 
 ## Exercise
 

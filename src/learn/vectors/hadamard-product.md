@@ -9,7 +9,7 @@ like addition:
 
 $$
 \begin{bmatrix} 3 \\ 2 \end{bmatrix} \odot \begin{bmatrix} 2 \\ 4 \end{bmatrix}
-= \begin{bmatrix} 3 \times 2 \\ 2 \times 4 \end{bmatrix}
+= \begin{bmatrix} 3 \cdot 2 \\ 2 \cdot 4 \end{bmatrix}
 = \begin{bmatrix} 6 \\ 8 \end{bmatrix}
 $$
 
@@ -25,6 +25,8 @@ fact is that, for mathematics, it's just not paricularly interesting: it doesn't
 encapsulate much meaning or structure about vectors. It's so mathematically
 boring that there aren't even any pictures on this page as there's nothing to
 draw.
+
+## Code
 
 For computational purposes, though, it sure is convenient! So in our code, we'll
 bestow upon it the honour of the `*` operator, even if it means refactoring

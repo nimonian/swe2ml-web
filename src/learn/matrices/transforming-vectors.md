@@ -4,10 +4,9 @@ In [rows and columns](./rows-and-columns), we said that a matrix represents an
 **action** rather than a thing. So, what actions do they represent, and what
 things do they act on?
 
-You have probably guessed by the title that matrices act on vectors. We can
-calculate the **product** of a matrix with a vector to get a new vector. To get
-the components of this new vector, we take the
-[dot product](../vectors/dot-product) with **each row** of the matrix.
+Every matrix $A$ defines a function $\vec{v} \mapsto A \vec{v}$ which accepts a
+vector and returns a vector. To get the components of this new vector, we take
+the [dot product](../vectors/dot-product) with **each row** of the matrix.
 
 $$
 A \vec{v} =
@@ -46,7 +45,7 @@ A\vec{v}
 = \begin{bmatrix} \vec{r_1} \cdot \vec{v} \\ \vec{r_2} \cdot \vec{v} \\ \vdots \\ \vec{r_m} \cdot \vec{v} \end{bmatrix}
 $$
 
-In fact, this is how I'll implement matrices acting on vectors in the code.
+In fact, this is how I'll implement matrix transformations.
 
 ::: code-group
 

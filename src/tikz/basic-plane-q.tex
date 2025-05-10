@@ -1,0 +1,34 @@
+\documentclass[tikz, border=5pt]{standalone}
+\usepackage{swe2ml}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{angles, quotes}
+
+\tdplotsetmaincoords{78}{20} % adjust view angles
+
+\begin{document}
+\begin{tikzpicture}[tdplot_main_coords, scale=1.5]
+
+  \coordinate (P) at (-4, -4, 0);
+  \coordinate (U) at (8, 0, 0);
+  \coordinate (V) at (0, 8, 0);
+
+  \coordinate(A) at ($(P)$);
+  \coordinate(B) at ($(P)+(U)$);
+  \coordinate (C) at ($(P)+(U)+(V)$);
+  \coordinate(D) at ($(P)+(V)$);
+
+  \coordinate(Q2) at (-2, -2, -1.5);
+  \draw[vp-path, c-text-1, dashed] (Q2) -- (-2, -2, 0);
+  \filldraw[c-text-1] (Q2) circle[vp-point, c-indigo-1];
+
+  \filldraw[color=c-indigo-1, opacity=0.3] (A) -- (B) -- (C) -- (D) -- cycle;
+
+  \coordinate(Q1) at (2, 2, 1.5);
+  \draw[vp-path, c-text-1, dashed] (Q1) -- (2, 2, 0);
+  \filldraw[c-text-1] (Q1) circle[vp-point, c-indigo-1];
+
+
+  \coordinate(Q1) at (0, 0, 0);
+  \filldraw[c-text-1] (Q1) circle[vp-point, c-indigo-1];
+\end{tikzpicture}
+\end{document}
