@@ -130,32 +130,37 @@ class Vector:
         return sqrt((u @ u) * (v @ v) - (u @ v) ** 2)
         # endregion vector_area
 
-    # region vector_cross_product
+    # region vector_omit
     def omit(self, i: int) -> Vector:
-        u = Vector(self.components[:i] + self.components[i + 1 :])
-        return u
+        return Vector(self.components[:i] + self.components[i + 1 :])
+        # endregion vector_omit
 
+    # region vector_cross_product
     @classmethod
-    def cross(cls, vectors: Sequence[Vector]) -> Vector:
+    def cross(cls, vectors: Iterable[Vector]) -> Vector:
+        vectors = tuple(vectors)
         dim = len(vectors) + 1
 
         if any(v.dim != dim for v in vectors):
-            raise ValueError("Requires n vectors in (n + 1)-dimensions")
+            raise ValueError("Requires (n - 1) vectors in n dimensions")
 
-        V = [(-1) ** i * cls.vol([v.omit(i) for v in vectors]) for i in range(dim)]
-        return Vector(V)
+        V = [cls.vol(v.omit(i) for v in vectors) for i in range(dim)]
+        return Vector((-1) ** i * V[i] for i in range(dim))
         # endregion vector_cross_product
 
+    # region vector_vol
     @classmethod
-    def vol(cls, vectors: list[Vector]) -> float:
+    def vol(cls, vectors: Iterable[Vector]) -> float:
+        vectors = tuple(vectors)
         dim = len(vectors)
 
         if any(v.dim != dim for v in vectors):
             raise ValueError("Require n vectors in n dimensions")
 
-        if dim == 2:
-            u, v = vectors
-            return u @ v.perp()
+        if dim == 1:
+            [u] = vectors
+            return u[0]
 
         u, *rest = vectors
         return u @ cls.cross(rest)
+        # endregion vector_vol

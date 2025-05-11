@@ -32,7 +32,7 @@ $$
 
 \begin{bmatrix}
 
-\text{Vol} \left(
+\text{vol} \left(
 \begin{bmatrix}
 u_2 \\ u_3
 \end{bmatrix},
@@ -41,7 +41,7 @@ v_2 \\ v_3
 \end{bmatrix}
 \right) \\
 
-- \text{Vol} \left(
+- \text{vol} \left(
 \begin{bmatrix}
 u_1 \\ u_3
 \end{bmatrix},
@@ -50,7 +50,7 @@ v_1 \\ v_3
 \end{bmatrix}
 \right) \\
 
-\text{Vol} \left(
+\text{vol} \left(
 \begin{bmatrix}
 u_1 \\ u_2
 \end{bmatrix},

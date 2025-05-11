@@ -35,8 +35,8 @@ This is it. Our big moment. Behold:
 
 ```py
 def __abs__(self) -> float:
-    return sqrt(sum(x**2 for x in self)) # [!code --]
     return sqrt(self @ self) # [!code ++]
+    return sqrt(sum(x**2 for x in self)) # [!code --]
 ```
 
 Fuck. Yes.
