@@ -189,23 +189,46 @@ def test_linear_combination():
     # endregion test_linear_combination
 
 
+# region test_vector_omit
+def test_vector_omit():
+    u = Vector([1, 2, 3])
+    v = u.omit(1)
+    assert v == Vector([1, 3])
+    # endregion test_vector_omit
+
+
+# region test_vol_1d
 def test_vector_vol_2d():
-    v1 = Vector([4, 2])
-    v2 = Vector([1, 3])
+    u = Vector([3])
+    assert Vector.vol([u]) == 3
+    # endregion test_vol_1d
 
-    assert Vector.vol([v1, v2]) == 10
+
+# region test_vol_2d
+def test_vector_vol_2d():
+    u = Vector([4, 2])
+    v = Vector([1, 3])
+
+    assert Vector.vol([u, v]) == 10
+    # endregion test_vol_2d
 
 
-# region test_vector_triple_product
-def test_vector_vol_3d():
-    u = Vector([0, 4, 5])
-    v = Vector([2, -3, 1])
-    w = Vector([7, -1, 2])
+# region test_vol_3d
+def test_volume_3d():
+    u = Vector([4, -1, 0])
+    v = Vector([-2, 1, -3])
+    w = Vector([3, 2, 3])
 
-    assert Vector.vol([u, v, w]) == 107
-    # endregion test_vector_triple_product
+    assert Vector.vol([u, v, w]) == 39
+    # endregion test_vol_3d
 
-    # region test_vector_triple_product_2
-    assert Vector.vol([w, u, v]) == 107
-    assert Vector.vol([v, w, u]) == 107
-    # endregion test_vector_triple_product_2
+
+# region test_vol_4d
+def test_volume_4d():
+    u = Vector([1, 2, 3, 4])
+    v1 = Vector([2, 3, 4, 1])
+    v2 = Vector([3, 4, 1, 2])
+    v3 = Vector([4, 1, 2, 3])
+
+    assert Vector.vol([u, v1, v2, v3]) == 160
+    # endregion test_vol_4d

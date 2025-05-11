@@ -15,7 +15,7 @@ $$
 
 ::: tip
 
-[Recall](../vectors/dot-prod-properties#vector-magnitude) that
+[Recall](../vectors/magnitude-revisited) that
 $|\vec{u}|^2 = \vec{u} \cdot \vec{u}$. The above formula is more convenient to
 compute as
 
@@ -39,7 +39,7 @@ $$
 
 Although correct, this isn't exactly convenient, especially because we don't
 want to deal with $\theta$ all the time. Good news! In our study of
-[cosine similarity](./cosine-similarity) we realised that
+[cosine similarity](../vectors/cosine-similarity) we realised that
 
 $$
 \cos \theta = \frac{\vec{v} \cdot \vec{u}}{|\vec{v}||\vec{u}|}

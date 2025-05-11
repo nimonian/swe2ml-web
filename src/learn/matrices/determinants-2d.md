@@ -16,7 +16,7 @@ $$
 
 is _really, really important_. So important, in fact, that we give it a special
 name: the **determinant**. If you squint and tilt your head, you might see that
-$|A|$ is the [cross product](../vectors/cross-product.md) of the columns of $A$.
+$|A|$ is the [cross product](../geometry/cross-product) of the columns of $A$.
 
 Before I start jabbering on about parallelograms, let's write the code.
 
@@ -31,7 +31,7 @@ Before I start jabbering on about parallelograms, let's write the code.
 ## Geometric interpretation
 
 Take two vectors, $\vec{u}$ and $\vec{v}$. We know that the area of the
-parallelogram is given by their [cross product](../vectors/cross-product.md)
+parallelogram is given by their [cross product](../geometry/cross-product)
 
 $$
 \vec{u} \times \vec{v} = u_1 v_2 - u_2 v_1

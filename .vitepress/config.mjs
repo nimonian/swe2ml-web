@@ -95,29 +95,36 @@ export default defineConfig({
         collapsed: true,
         items: [
           {
-            text: 'Parallelograms',
-            link: '/learn/geometry/parallelograms'
+            text: 'Volumes',
+            link: '/learn/geometry/volumes',
+            items: [
+              {
+                text: 'Parallelograms',
+                link: '/learn/geometry/parallelograms'
+              },
+              {
+                text: 'Parallelpipeds',
+                link: '/learn/geometry/parallelepipeds'
+              },
+              {
+                text: 'Parallelotopes',
+                link: '/learn/geometry/parallelotopes'
+              }
+            ]
           },
           {
-            text: 'Cross product',
+            text: 'Normal vectors',
             link: '/learn/geometry/cross-product',
             items: [
               {
                 text: 'Area property',
                 link: '/learn/geometry/cross-product-area'
+              },
+              {
+                text: 'Triple product',
+                link: '/learn/geometry/triple-product'
               }
             ]
-          },
-          {
-            text: 'Triple product',
-            link: '/learn/geometry/triple-product'
-          },
-          {
-            text: 'Generalised cross product',
-            link: '/learn/geometry/generalised-cross-product'
-          },
-          {
-            text: 'Volumes'
           },
           {
             text: 'Areas'

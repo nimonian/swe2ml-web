@@ -13,7 +13,7 @@ create instances of `Plane` given $3$ points - $P_0$, $P_1$ and $P_2$.
 
 If we let $\vec{d_1}$ be the vector from $P_0$ to $P_1$ and $\vec{d_2}$ be the
 vector from $P_0$ to $P_1$, then we can compute the normal vector $\vec{n}$
-using the [cross product](../vectors/cross-product):
+using the [cross product](../geometry/cross-product):
 
 $$
 \vec{n} = \vec{d_1} \times \vec{d_2}

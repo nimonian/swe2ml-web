@@ -1,17 +1,24 @@
 # Triple product
 
-We've seen how to find the area of a parallelogram given by two vectors. If
-we're given three vectors, however, they determine a **parallelepiped**.
-
-![](../../images/parallelepiped.svg)
-
-A parallelepiped is a bit like a wonky cube. We're interested to find the
-**volume** of this shape. It turns out that there's a rather beautiful formula
-for it:
+There's a mathematically pleasant way of expressing the volume of a
+parallelotope:
 
 $$
-\text{Volume} = \vec{u} \cdot \left( \vec{v} \times \vec{w} \right)
+\text{vol}\left( \vec{u}, \,\, \vec{v}_1, \,\, \ldots, \,\, \vec{v}_{n-1} \right) = \vec{u} \cdot \left( \vec{v}_1 \times \vec{v}_2 \times \ldots \times \vec{v}_{n-1} \right)
 $$
+
+::: details
+
+$$
+\begin{aligned}
+\text{vol}\left( \vec{u}, \,\, \vec{v}_1, \,\, \ldots, \,\, \vec{v}_{n-1} \right)
+& = u_1 V_1 - u_2 V_2 + \ldots \pm u_n V_n \\[5pt]
+& = \begin{bmatrix} u_1 \\ u_2 \\ \vdots \\ u_n \end{bmatrix} \cdot \begin{bmatrix} V_1 \\ - V_2 \\ \vdots \\ \pm V_n \end{bmatrix} \\[5pt]
+& = \vec{u} \cdot \left( \vec{v}_1 \times \vec{v}_2 \times \ldots \times \vec{v}_{n-1} \right)
+\end{aligned}
+$$
+
+:::
 
 ::: details
 

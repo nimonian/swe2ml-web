@@ -1,0 +1,54 @@
+\documentclass[tikz,border=5pt]{standalone}
+\usepackage{tikz-3dplot}
+\usepackage{swe2ml}
+
+\usetikzlibrary{angles, quotes}
+
+
+\begin{document}
+% View: z up, x right, y into the page
+\tdplotsetmaincoords{72}{25}
+
+\begin{tikzpicture}[tdplot_main_coords, scale=4.5]
+  
+% Define the z-axis direction as a point
+\coordinate (Z) at (0,0,1);
+
+
+% Define vectors a, b, c
+\coordinate (O) at (0,0,0);
+\coordinate (A) at (1,0,0);       % Vector a
+\coordinate (B) at (0.35,1,0);     % Vector b (into the page, slight z)
+\coordinate (C) at (0.3,0.3,1);       % Vector c (upward)
+
+% Build parallelepiped
+\coordinate (AB) at ($(A)+(B)$);
+\coordinate (AC) at ($(A)+(C)$);
+\coordinate (BC) at ($(B)+(C)$);
+\coordinate (ABC) at ($(A)+(B)+(C)$);
+
+\filldraw[c-indigo-1, opacity=0.1] (O) -- (A) -- (AB) -- (B) -- cycle;
+
+
+% Draw base parallelogram (a and b)
+\draw[vp-path, c-indigo-1] (A) -- (AB);
+\draw[vp-path, c-indigo-1, dashed] (AB) -- (B);
+
+% Draw vectors a, b, c
+\draw[vp-path, c-indigo-1] (O) -- (A);
+\draw[vp-path, c-indigo-1] (O) -- (B);
+\draw[vp-path, c-indigo-1] (O) -- (C);
+
+% Draw vertical edges
+\draw[vp-path, c-indigo-1] (A) -- (AC);
+\draw[vp-path, c-indigo-1, dashed] (B) -- (BC);
+\draw[vp-path, c-indigo-1] (AB) -- (ABC);
+
+% Draw top
+\draw[vp-path, c-indigo-1] (C) -- (BC);
+\draw[vp-path, c-indigo-1] (BC) -- (ABC);
+\draw[vp-path, c-indigo-1] (ABC) -- (AC);
+\draw[vp-path, c-indigo-1] (AC) -- (C);
+
+\end{tikzpicture}
+\end{document}
